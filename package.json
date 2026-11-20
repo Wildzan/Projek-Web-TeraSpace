@@ -1,0 +1,35 @@
+{
+  "name": "w11_webterasjti_kelompok4_nobugnocry",
+  "version": "1.0.0",
+  "description": "Proyek Kelompok 4 (NoBugNoCry), Golongan C, D4 Teknik Informatika, Jurusan Teknologi Informasi, Politeknik Negeri Jember. Mata kuliah Workshop Desain Aplikasi (TIF110809), BKPM Minggu 11.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server/app.js",
+    "start": "node server/app.js",
+    "seed": "node server/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k4iroshiki/Web-TerasJTI-Workspace.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/k4iroshiki/Web-TerasJTI-Workspace/issues"
+  },
+  "homepage": "https://github.com/k4iroshiki/Web-TerasJTI-Workspace#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^13.2.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.5.0",
+    "node-cron": "^4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
