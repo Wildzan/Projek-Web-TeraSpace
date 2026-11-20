@@ -1,109 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pembayaran DP - Teras JTI</title>
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components/button.css">
-  <link rel="stylesheet" href="assets/css/components/card.css">
-  <link rel="stylesheet" href="assets/css/components/form.css">
-  <link rel="stylesheet" href="assets/css/components/status.css">
-  <link rel="stylesheet" href="assets/css/components/table.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pembayaran DP - Teras JTI</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components/button.css" />
+    <link rel="stylesheet" href="assets/css/components/card.css" />
+    <link rel="stylesheet" href="assets/css/components/form.css" />
+    <link rel="stylesheet" href="assets/css/components/status.css" />
+    <link rel="stylesheet" href="assets/css/components/table.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-kiri">
+        <a href="dashboard.html" class="brand">
+          <img
+            src="assets/images/logo.png"
+            alt="Logo Teras JTI"
+            class="logo-img"
+          />
+          <span class="brand-title">Teras JTI</span>
+        </a>
 
-  <header>
-    <h1>Pembayaran DP</h1>
-    <p>Teras JTI - Reservasi tempat Jurusan Teknologi Informasi</p>
-  </header>
+        <nav class="nav-utama">
+          <a href="dashboard.html" class="nav-link">Beranda</a>
+          <a href="riwayat.html" class="nav-link">Riwayat</a>
+          <a href="profil.html" class="nav-link">Profil</a>
+        </nav>
+      </div>
 
-  <nav>
-    <ul>
-      <li><a href="dashboard.html">Beranda</a></li>
-      <li><a href="riwayat.html">Riwayat</a></li>
-      <li><a href="profil.html">Profil</a></li>
-    </ul>
-  </nav>
+      <div class="topbar-kanan">
+        <a href="#" class="notif-btn" aria-label="Notifikasi">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </a>
 
-  <main>
+        <div class="user-info">
+          <span class="user-avatar">NP</span>
+          <span class="user-name">Nama Pengguna</span>
+        </div>
+      </div>
+    </header>
 
-    <p><a class="kembali" href="reservasi.html">Kembali</a></p>
-
-    <section>
-      <h2>Batas Waktu Pembayaran</h2>
-      <p>Selesaikan pembayaran dalam <strong>23:59:41</strong></p>
-    </section>
-
-    <form action="hasil-reservasi.html">
-
-      <section>
-        <h2>Rincian Biaya</h2>
-        <table>
-          <caption>Rincian Biaya Reservasi Aula Mini</caption>
-          <thead>
-            <tr>
-              <th scope="col">Keterangan</th>
-              <th scope="col">Nominal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Biaya tempat</td>
-              <td>Rp 150.000</td>
-            </tr>
-            <tr>
-              <td>DP</td>
-              <td>Rp 50.000</td>
-            </tr>
-            <tr>
-              <td>Sisa dibayar di tempat</td>
-              <td>Rp 100.000</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>Bayar sekarang (DP)</td>
-              <td>Rp 50.000</td>
-            </tr>
-          </tfoot>
-        </table>
-      </section>
+    <main>
+      <p><a class="kembali" href="reservasi.html">Kembali</a></p>
 
       <section>
-        <h2>Metode Pembayaran</h2>
-        <p>
-          <input type="radio" id="metode-bank" name="metode" value="bank" checked>
-          <label for="metode-bank">Transfer Bank (BCA, BNI, Mandiri)</label>
-        </p>
-        <p>
-          <input type="radio" id="metode-qris" name="metode" value="qris">
-          <label for="metode-qris">QRIS (E-Wallet)</label>
-        </p>
+        <h2>Batas Waktu Pembayaran</h2>
+        <p>Selesaikan pembayaran dalam <strong>23:59:41</strong></p>
       </section>
 
-      <section>
-        <h2>Bukti Pembayaran</h2>
+      <form action="hasil-reservasi.html">
+        <section>
+          <h2>Rincian Biaya</h2>
+          <table>
+            <caption>
+              Rincian Biaya Reservasi Aula Mini
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Keterangan</th>
+                <th scope="col">Nominal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Biaya tempat</td>
+                <td>Rp 150.000</td>
+              </tr>
+              <tr>
+                <td>DP</td>
+                <td>Rp 50.000</td>
+              </tr>
+              <tr>
+                <td>Sisa dibayar di tempat</td>
+                <td>Rp 100.000</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Bayar sekarang (DP)</td>
+                <td>Rp 50.000</td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+
+        <section>
+          <h2>Metode Pembayaran</h2>
+          <p>
+            <input
+              type="radio"
+              id="metode-bank"
+              name="metode"
+              value="bank"
+              checked
+            />
+            <label for="metode-bank">Transfer Bank (BCA, BNI, Mandiri)</label>
+          </p>
+          <p>
+            <input type="radio" id="metode-qris" name="metode" value="qris" />
+            <label for="metode-qris">QRIS (E-Wallet)</label>
+          </p>
+        </section>
+
+        <section>
+          <h2>Bukti Pembayaran</h2>
+          <p>
+            <label for="bukti">Unggah bukti pembayaran</label><br />
+            <input
+              type="file"
+              id="bukti"
+              name="bukti"
+              accept="image/png,image/jpeg"
+            />
+          </p>
+          <p>JPG atau PNG, maksimal 2 MB</p>
+        </section>
+
         <p>
-          <label for="bukti">Unggah bukti pembayaran</label><br>
-          <input type="file" id="bukti" name="bukti" accept="image/png,image/jpeg">
+          <button type="submit">Kirim Bukti &amp; Konfirmasi</button>
         </p>
-        <p>JPG atau PNG, maksimal 2 MB</p>
-      </section>
+      </form>
+    </main>
 
-      <p>
-        <button type="submit">Kirim Bukti &amp; Konfirmasi</button>
-      </p>
-
-    </form>
-
-  </main>
-
-  <footer>
-    <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
-    <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
-  </footer>
-
-</body>
+    <footer>
+      <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
+      <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
+    </footer>
+  </body>
 </html>

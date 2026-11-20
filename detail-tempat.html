@@ -1,105 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail Tempat - Teras JTI</title>
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components/button.css">
-  <link rel="stylesheet" href="assets/css/components/card.css">
-  <link rel="stylesheet" href="assets/css/components/form.css">
-  <link rel="stylesheet" href="assets/css/components/status.css">
-  <link rel="stylesheet" href="assets/css/components/table.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Tempat - Teras JTI</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components/button.css" />
+    <link rel="stylesheet" href="assets/css/components/card.css" />
+    <link rel="stylesheet" href="assets/css/components/form.css" />
+    <link rel="stylesheet" href="assets/css/components/status.css" />
+    <link rel="stylesheet" href="assets/css/components/table.css" />
+    <link rel="stylesheet" href="assets/css/detail-tempat.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-kiri">
+        <a href="dashboard.html" class="brand">
+          <span class="brand-badge">JTI</span>
+          <span class="brand-title">Teras JTI</span>
+        </a>
+        <nav class="nav-utama" aria-label="Navigasi Utama">
+          <a href="dashboard.html" class="nav-link">Beranda</a>
+          <a href="riwayat.html" class="nav-link">Riwayat</a>
+          <a href="profil.html" class="nav-link">Profil</a>
+        </nav>
+      </div>
 
-  <header>
-    <h1>Detail Tempat</h1>
-    <p>Teras JTI - Reservasi tempat Jurusan Teknologi Informasi</p>
-  </header>
+      <div class="topbar-kanan">
+        <a href="profil.html" class="user-info">
+          <span class="user-avatar">NP</span>
+          <span class="user-name">Nama Pengguna</span>
+        </a>
+      </div>
+    </header>
 
-  <nav>
-    <ul>
-      <li><a href="dashboard.html">Beranda</a></li>
-      <li><a href="riwayat.html">Riwayat</a></li>
-      <li><a href="profil.html">Profil</a></li>
-    </ul>
-  </nav>
+    <main class="detail-page">
+      <div class="detail-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a>Beranda</a>
+          <span>/</span>
+          <span>Ruang Diskusi</span>
+          <span>/</span>
+          <span>Reservasi</span>
+        </nav>
 
-  <main>
+        <div class="detail-grid">
+          <!-- Kolom Kiri -->
+          <div class="detail-main-col">
+            <!-- Info Tempat -->
+            <section class="detail-card">
+              <div class="tempat-photo-box">
+                <img
+                  src="assets/images/aulamini.webp"
+                  alt="Foto Ruang Diskusi Teras JTI"
+                  class="tempat-photo-img"
+                />
+              </div>
 
-    <p><a class="kembali" href="dashboard.html">Kembali</a></p>
+              <div class="tempat-header">
+                <h1 class="tempat-title">Ruang Diskusi</h1>
+                <span class="dp-badge">GRATIS</span>
+              </div>
 
-    <section>
-      <h2>Ruang Diskusi</h2>
+              <p class="tempat-kapasitas">Kapasitas: 8 orang</p>
 
-      <figure>
-        <img src="assets/images/aulamini.webp" alt="Foto Ruang Diskusi Teras JTI" width="480" height="270">
-        <figcaption>Foto Ruang Diskusi</figcaption>
-      </figure>
+              <div class="fasilitas-list">
+                <span class="fasilitas-tag">Wi-Fi</span>
+                <span class="fasilitas-tag">Proyektor</span>
+                <span class="fasilitas-tag">Stop kontak</span>
+                <span class="fasilitas-tag">AC</span>
+              </div>
 
-      <p>GRATIS</p>
-      <p>Kapasitas: 8 orang</p>
-    </section>
+              <div class="jadwal-list">
+                <div class="jadwal-row">
+                  <span class="jadwal-hari">Senin sampai Jumat</span>
+                  <span class="jadwal-jam">08:00 - 16:00</span>
+                </div>
+                <div class="jadwal-row">
+                  <span class="jadwal-hari">Sabtu</span>
+                  <span class="jadwal-jam">08:00 - 12:00</span>
+                </div>
+                <div class="jadwal-row">
+                  <span class="jadwal-hari">Minggu</span>
+                  <span class="jadwal-jam is-closed">Tutup</span>
+                </div>
+              </div>
 
-    <section>
-      <h2>Fasilitas</h2>
-      <ul>
-        <li>Wi-Fi</li>
-        <li>Proyektor</li>
-        <li>Stop kontak</li>
-        <li>AC</li>
-      </ul>
-    </section>
+              <div class="aturan-box">
+                <h2 class="aturan-heading">Aturan Penggunaan</h2>
+                <ol class="aturan-list">
+                  <li>Datang sesuai jadwal reservasi.</li>
+                  <li>Jumlah orang tidak melebihi kapasitas tempat.</li>
+                  <li>Jaga kebersihan dan kerapian tempat.</li>
+                  <li>Batalkan reservasi lebih awal bila berhalangan hadir.</li>
+                </ol>
+              </div>
+            </section>
 
-    <section>
-      <h2>Jam Operasional</h2>
-      <table>
-        <caption>Jam Operasional Teras JTI</caption>
-        <thead>
-          <tr>
-            <th scope="col">Hari</th>
-            <th scope="col">Jam</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Senin sampai Jumat</td>
-            <td>08:00 - 16:00</td>
-          </tr>
-          <tr>
-            <td>Sabtu</td>
-            <td>08:00 - 12:00</td>
-          </tr>
-          <tr>
-            <td>Minggu</td>
-            <td>Tutup</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <section>
-      <h2>Aturan Penggunaan</h2>
-      <ol>
-        <li>Datang sesuai jadwal reservasi.</li>
-        <li>Jumlah orang tidak melebihi kapasitas tempat.</li>
-        <li>Jaga kebersihan dan kerapian tempat.</li>
-        <li>Batalkan reservasi lebih awal bila berhalangan hadir.</li>
-      </ol>
-    </section>
+            <!-- Kalender Ketersediaan -->
+            <section class="detail-card">
+              <h2 class="kalender-heading">
+                Ketersediaan &middot; Oktober 2026
+              </h2>
 
-    <section>
-      <h2>Pesan Tempat</h2>
-      <p><a class="tombol" href="ketersediaan.html">Pilih Jadwal</a></p>
-    </section>
+              <div
+                class="kalender-grid"
+                role="grid"
+                aria-label="Kalender Oktober 2026"
+              >
+                <div class="kalender-day-name">Sen</div>
+                <div class="kalender-day-name">Sel</div>
+                <div class="kalender-day-name">Rab</div>
+                <div class="kalender-day-name">Kam</div>
+                <div class="kalender-day-name">Jum</div>
+                <div class="kalender-day-name">Sab</div>
+                <div class="kalender-day-name">Min</div>
 
-  </main>
+                <div class="kalender-date is-empty"></div>
+                <div class="kalender-date is-empty"></div>
+                <div class="kalender-date is-empty"></div>
+                <button type="button" class="kalender-date">1</button>
+                <button type="button" class="kalender-date">2</button>
+                <button type="button" class="kalender-date">3</button>
+                <button type="button" class="kalender-date">4</button>
 
-  <footer>
-    <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
-    <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
-  </footer>
+                <button type="button" class="kalender-date">5</button>
+                <button type="button" class="kalender-date">6</button>
+                <button type="button" class="kalender-date">7</button>
+                <button type="button" class="kalender-date">8</button>
+                <button type="button" class="kalender-date">9</button>
+                <button type="button" class="kalender-date">10</button>
+                <button type="button" class="kalender-date">11</button>
 
-</body>
+                <button type="button" class="kalender-date">12</button>
+                <button type="button" class="kalender-date">13</button>
+                <button type="button" class="kalender-date">14</button>
+                <button type="button" class="kalender-date">15</button>
+                <button type="button" class="kalender-date">16</button>
+                <button type="button" class="kalender-date">17</button>
+                <button type="button" class="kalender-date">18</button>
+
+                <button type="button" class="kalender-date">19</button>
+                <button type="button" class="kalender-date">20</button>
+                <button type="button" class="kalender-date">21</button>
+                <button type="button" class="kalender-date">22</button>
+                <button type="button" class="kalender-date">23</button>
+                <button type="button" class="kalender-date">24</button>
+                <button type="button" class="kalender-date">25</button>
+
+                <button type="button" class="kalender-date is-outline">
+                  26
+                </button>
+                <button type="button" class="kalender-date">27</button>
+                <button type="button" class="kalender-date is-selected">
+                  28
+                </button>
+                <button type="button" class="kalender-date">29</button>
+                <button type="button" class="kalender-date">30</button>
+                <button type="button" class="kalender-date">31</button>
+                <div class="kalender-date is-empty"></div>
+              </div>
+
+              <div class="kalender-legend">
+                <span>Jam tersedia:</span>
+                <span class="legend-pill is-kosong">Kosong</span>
+                <span class="legend-pill is-terisi">Terisi</span>
+                <span class="legend-pill is-dipilih">Dipilih</span>
+              </div>
+            </section>
+          </div>
+
+          <!-- Kolom Kanan: Form Reservasi -->
+          <aside class="detail-side-col">
+            <section class="detail-card reservasi-card">
+              <h2 class="reservasi-heading">Reservasi</h2>
+
+              <form
+                class="reservasi-form"
+                action="hasil-reservasi.html"
+                method="get"
+              >
+                <div class="res-group">
+                  <label for="tempat" class="res-label">Tempat</label>
+                  <input
+                    type="text"
+                    id="tempat"
+                    name="tempat"
+                    class="res-input"
+                    value="Ruang Diskusi"
+                  />
+                </div>
+
+                <div class="res-group">
+                  <label for="tanggal" class="res-label">Tanggal</label>
+                  <input
+                    type="text"
+                    id="tanggal"
+                    name="tanggal"
+                    class="res-input"
+                    value="Rabu, 28 Okt 2026"
+                  />
+                </div>
+
+                <div class="res-row-2">
+                  <div class="res-group">
+                    <label for="jam-mulai" class="res-label">Jam Mulai</label>
+                    <input
+                      type="text"
+                      id="jam-mulai"
+                      name="jam_mulai"
+                      class="res-input"
+                      value="08:00"
+                    />
+                  </div>
+
+                  <div class="res-group">
+                    <label for="jam-selesai" class="res-label"
+                      >Jam Selesai</label
+                    >
+                    <input
+                      type="text"
+                      id="jam-selesai"
+                      name="jam_selesai"
+                      class="res-input"
+                      value="10:00"
+                    />
+                  </div>
+                </div>
+
+                <div class="res-group">
+                  <label for="jumlah-orang" class="res-label"
+                    >Jumlah Orang</label
+                  >
+                  <input
+                    type="text"
+                    id="jumlah-orang"
+                    name="jumlah_orang"
+                    class="res-input"
+                    value="4 Orang"
+                  />
+                </div>
+
+                <button type="submit" class="btn-reservasi">
+                  Kirim Reservasi
+                </button>
+              </form>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="detail-footer">
+      <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
+      <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
+    </footer>
+  </body>
 </html>

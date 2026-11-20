@@ -1,54 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Teras JTI</title>
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components/button.css">
-  <link rel="stylesheet" href="assets/css/components/card.css">
-  <link rel="stylesheet" href="assets/css/components/form.css">
-  <link rel="stylesheet" href="assets/css/components/status.css">
-  <link rel="stylesheet" href="assets/css/components/table.css">
-</head>
-<body class="auth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masuk - Teras JTI</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components/button.css" />
+    <link rel="stylesheet" href="assets/css/components/card.css" />
+    <link rel="stylesheet" href="assets/css/components/form.css" />
+    <link rel="stylesheet" href="assets/css/components/status.css" />
+    <link rel="stylesheet" href="assets/css/components/table.css" />
+  </head>
+  <body class="login-body">
+    <div class="login-wrapper">
+      <!-- Kolom Kiri -->
+      <aside class="login-brand">
+        <div class="login-brand-inner">
+          <div class="login-logo-box">
+            <img
+              src="assets/images/logo.png"
+              alt="Logo Teras JTI"
+              class="login-logo-img"
+            />
+          </div>
+          <h1 class="login-brand-title">Teras JTI</h1>
+          <p class="login-brand-desc">
+            Reservasi tempat Jurusan Teknologi Informasi, dari mana saja.
+          </p>
+        </div>
+      </aside>
 
-    <header>
-        <img src="assets/images/logo.png" alt="Logo Teras JTI" width="48" height="48">
-        <h1>Teras JTI</h1>
-        <p>Reservasi tempat Jurusan Teknologi Informasi</p>
-    </header>
+      <!-- Kolom Kanan -->
+      <main class="login-panel">
+        <div class="login-box">
+          <h2 class="login-heading">Masuk</h2>
 
-    <main>
-    
-        <section>
-            <h2 style="justify-content: center; display: flex;">Login</h2>
-            <p>Masukkan email dan kata sandi untuk mulai memesan tempat.</p>
+          <form class="login-form" action="dashboard.html" method="get">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="nama@email.com"
+                required
+              />
+            </div>
 
-            <form action="dashboard.html">
-                <p>
-                    <label for="email">Email</label><br>
-                    <input type="email" id="email" placeholder="contoh@email.com">
-                </p>
+            <div class="form-group">
+              <label for="sandi" class="form-label">Kata Sandi</label>
+              <input
+                type="password"
+                id="sandi"
+                name="sandi"
+                class="form-input"
+                placeholder="Masukkan kata sandi"
+                required
+              />
+            </div>
 
-                <p>
-                    <label for="sandi">Kata Sandi</label><br>
-                    <input type="password" id="sandi" placeholder="Masukkan kata sandi">
-                </p>
+            <button type="submit" class="btn-login">Login</button>
+          </form>
 
-                <p>
-                    <button type="submit">Masuk</button>
-                </p>
-            </form>
-
-            <p>Belum punya akun? <a href="registrasi.html">Daftar</a></p>
-        </section>
-    </main>
-
-    <footer>
-        <p> 2026 Teras JTI - Politeknik Negeri Jember</p>
-    </footer>
-
-</body>
+          <p class="login-footer-text">
+            Belum punya akun?
+            <a href="registrasi.html" class="login-link">Daftar</a>
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

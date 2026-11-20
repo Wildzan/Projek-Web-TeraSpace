@@ -1,0 +1,362 @@
+/* =========================================
+   HALAMAN DETAIL, JADWAL & FORM RESERVASI
+   ========================================= */
+.brand-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: grid;
+  place-items: center;
+}
+
+.user-info {
+  text-decoration: none;
+}
+
+.detail-page {
+  width: 100%;
+  max-width: none;
+  background-color: #f8fafc;
+  padding: 24px 24px 48px;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.detail-container {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #6b7280;
+}
+
+/* Grid Utama 2 Kolom */
+.detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.detail-main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.detail-side-col {
+  min-width: 0;
+}
+
+.detail-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Foto Tempat */
+.tempat-photo-box {
+  width: 100%;
+  height: 240px;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.tempat-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tempat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.tempat-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.dp-badge {
+  background-color: #fef3c7;
+  color: #92400e;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tempat-kapasitas {
+  margin: 0 0 12px;
+  font-size: 0.88rem;
+  color: #4b5563;
+}
+
+/* Fasilitas */
+.fasilitas-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.fasilitas-tag {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Jadwal Operasional */
+.jadwal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.jadwal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.jadwal-hari {
+  color: #6b7280;
+}
+
+.jadwal-jam {
+  font-weight: 600;
+  color: #111827;
+}
+
+.jadwal-jam.is-closed {
+  color: #dc2626;
+}
+
+/* Aturan Penggunaan */
+.aturan-box {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.aturan-heading {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.aturan-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Kalender Ketersediaan */
+.kalender-heading {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.detail-page .kalender-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  text-align: center;
+}
+
+.kalender-day-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #4b5563;
+  padding: 6px 0;
+}
+
+.detail-page .kalender-date {
+  width: 100%;
+  height: 36px;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: #374151;
+  font-size: 0.84rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.detail-page .kalender-date:not(.is-empty):hover {
+  background-color: #2563eb;
+}
+
+.detail-page .kalender-date.is-empty {
+  pointer-events: none;
+}
+
+.detail-page .kalender-date.is-outline {
+  border-color: #2563eb;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.detail-page .kalender-date.is-selected {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.kalender-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.legend-pill {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.legend-pill.is-kosong {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.legend-pill.is-terisi {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.legend-pill.is-dipilih {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+/* Form Reservasi Kanan */
+.reservasi-heading {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.res-group {
+  margin-bottom: 14px;
+}
+
+.res-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.detail-page .res-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 12px;
+  font-size: 0.88rem;
+  color: #111827;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.detail-page .res-input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.res-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.detail-page .btn-reservasi {
+  width: 100%;
+  margin-top: 4px;
+  padding: 11px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #1d4ed8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.detail-page .btn-reservasi:hover {
+  background-color: #1e40af;
+}
+
+/* Footer */
+.detail-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.detail-footer p {
+  margin: 4px 0;
+}
+
+/* Responsif */
+@media (max-width: 820px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,113 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hasil Reservasi - Teras JTI</title>
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components/button.css">
-  <link rel="stylesheet" href="assets/css/components/card.css">
-  <link rel="stylesheet" href="assets/css/components/form.css">
-  <link rel="stylesheet" href="assets/css/components/status.css">
-  <link rel="stylesheet" href="assets/css/components/table.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasil Reservasi - Teras JTI</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components/button.css" />
+    <link rel="stylesheet" href="assets/css/components/card.css" />
+    <link rel="stylesheet" href="assets/css/components/form.css" />
+    <link rel="stylesheet" href="assets/css/components/status.css" />
+    <link rel="stylesheet" href="assets/css/components/table.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-kiri">
+        <a href="dashboard.html" class="brand">
+          <img
+            src="assets/images/logo.png"
+            alt="Logo Teras JTI"
+            class="logo-img"
+          />
+          <span class="brand-title">Teras JTI</span>
+        </a>
 
-  <header>
-    <h1>Hasil Reservasi</h1>
-    <p>Halaman ini menampilkan tiga kemungkinan hasil setelah reservasi dikirim</p>
-  </header>
+        <nav class="nav-utama">
+          <a href="dashboard.html" class="nav-link">Beranda</a>
+          <a href="riwayat.html" class="nav-link">Riwayat</a>
+          <a href="profil.html" class="nav-link">Profil</a>
+        </nav>
+      </div>
 
-  <nav>
-    <ul>
-      <li><a href="dashboard.html">Beranda</a></li>
-      <li><a href="riwayat.html">Riwayat</a></li>
-      <li><a href="profil.html">Profil</a></li>
-    </ul>
-  </nav>
+      <div class="topbar-kanan">
+        <a href="#" class="notif-btn" aria-label="Notifikasi">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </a>
 
-  <main>
+        <div class="user-info">
+          <span class="user-avatar">NP</span>
+          <span class="user-name">Nama Pengguna</span>
+        </div>
+      </div>
+    </header>
 
-    <section>
-      <h2>Contoh Tampilan: Reservasi Terkonfirmasi (Tempat Gratis)</h2>
-      <div class="banner banner-sukses"><p><strong>Reservasi Terkonfirmasi</strong></p><p>Tempat berhasil dipesan. Reservasimu sudah terkonfirmasi.</p></div>
+    <main>
+      <section>
+        <h2>Contoh Tampilan: Reservasi Terkonfirmasi (Tempat Gratis)</h2>
+        <div class="banner banner-sukses">
+          <p><strong>Reservasi Terkonfirmasi</strong></p>
+          <p>Tempat berhasil dipesan. Reservasimu sudah terkonfirmasi.</p>
+        </div>
 
-      <dl>
-        <dt>Tempat</dt>
-        <dd>Ruang Diskusi</dd>
-        <dt>Tanggal dan Jam</dt>
-        <dd>Rabu, 28 Okt 2026, 13:00 - 15:00</dd>
-        <dt>Jumlah Orang</dt>
-        <dd>4 orang</dd>
-        <dt>Biaya</dt>
-        <dd>GRATIS</dd>
-        <dt>Status</dt>
-        <dd>Terkonfirmasi</dd>
-      </dl>
+        <dl>
+          <dt>Tempat</dt>
+          <dd>Ruang Diskusi</dd>
+          <dt>Tanggal dan Jam</dt>
+          <dd>Rabu, 28 Okt 2026, 13:00 - 15:00</dd>
+          <dt>Jumlah Orang</dt>
+          <dd>4 orang</dd>
+          <dt>Biaya</dt>
+          <dd>GRATIS</dd>
+          <dt>Status</dt>
+          <dd>Terkonfirmasi</dd>
+        </dl>
 
-      <ul>
-        <li><a href="riwayat.html">Lihat Riwayat</a></li>
-        <li><a href="dashboard.html">Kembali ke Beranda</a></li>
-      </ul>
-    </section>
+        <ul>
+          <li><a href="riwayat.html">Lihat Riwayat</a></li>
+          <li><a href="dashboard.html">Kembali ke Beranda</a></li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Contoh Tampilan: Menunggu Pembayaran (Tempat Berbayar)</h2>
-      <div class="banner banner-menunggu"><p><strong>Reservasi Tercatat</strong></p><p>Selesaikan pembayaran DP agar reservasimu terkonfirmasi. Jadwal ditahan sementara.</p></div>
+      <section>
+        <h2>Contoh Tampilan: Menunggu Pembayaran (Tempat Berbayar)</h2>
+        <div class="banner banner-menunggu">
+          <p><strong>Reservasi Tercatat</strong></p>
+          <p>
+            Selesaikan pembayaran DP agar reservasimu terkonfirmasi. Jadwal
+            ditahan sementara.
+          </p>
+        </div>
 
-      <dl>
-        <dt>Tempat</dt>
-        <dd>Aula Mini</dd>
-        <dt>Tanggal dan Jam</dt>
-        <dd>Rabu, 28 Okt 2026, 13:00 - 15:00</dd>
-        <dt>Jumlah Orang</dt>
-        <dd>4 orang</dd>
-        <dt>DP</dt>
-        <dd>Rp 50.000</dd>
-        <dt>Status</dt>
-        <dd>Menunggu Pembayaran</dd>
-        <dt>Status DP</dt>
-        <dd>Belum Bayar</dd>
-      </dl>
+        <dl>
+          <dt>Tempat</dt>
+          <dd>Aula Mini</dd>
+          <dt>Tanggal dan Jam</dt>
+          <dd>Rabu, 28 Okt 2026, 13:00 - 15:00</dd>
+          <dt>Jumlah Orang</dt>
+          <dd>4 orang</dd>
+          <dt>DP</dt>
+          <dd>Rp 50.000</dd>
+          <dt>Status</dt>
+          <dd>Menunggu Pembayaran</dd>
+          <dt>Status DP</dt>
+          <dd>Belum Bayar</dd>
+        </dl>
 
-      <ul>
-        <li><a class="tombol" href="pembayaran.html">Bayar DP Sekarang</a></li>
-        <li><a href="riwayat.html">Lihat Riwayat</a></li>
-      </ul>
-    </section>
+        <ul>
+          <li>
+            <a class="tombol" href="pembayaran.html">Bayar DP Sekarang</a>
+          </li>
+          <li><a href="riwayat.html">Lihat Riwayat</a></li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Contoh Tampilan: DP Lunas (Reservasi Berhasil)</h2>
-      <div class="banner banner-sukses"><p><strong>Reservasi Berhasil</strong></p><p>Pembayaran DP diterima. Reservasimu sudah terkonfirmasi.</p></div>
+      <section>
+        <h2>Contoh Tampilan: DP Lunas (Reservasi Berhasil)</h2>
+        <div class="banner banner-sukses">
+          <p><strong>Reservasi Berhasil</strong></p>
+          <p>Pembayaran DP diterima. Reservasimu sudah terkonfirmasi.</p>
+        </div>
 
-      <dl>
-        <dt>Tempat</dt>
-        <dd>Aula Mini</dd>
-        <dt>Tanggal dan Jam</dt>
-        <dd>Rabu, 28 Okt 2026, 13:00 - 15:00</dd>
-        <dt>Jumlah Orang</dt>
-        <dd>4 orang</dd>
-        <dt>DP</dt>
-        <dd>Rp 50.000</dd>
-        <dt>Status</dt>
-        <dd>Terkonfirmasi</dd>
-        <dt>Status DP</dt>
-        <dd>Lunas</dd>
-      </dl>
+        <dl>
+          <dt>Tempat</dt>
+          <dd>Aula Mini</dd>
+          <dt>Tanggal dan Jam</dt>
+          <dd>Rabu, 28 Okt 2026, 13:00 - 15:00</dd>
+          <dt>Jumlah Orang</dt>
+          <dd>4 orang</dd>
+          <dt>DP</dt>
+          <dd>Rp 50.000</dd>
+          <dt>Status</dt>
+          <dd>Terkonfirmasi</dd>
+          <dt>Status DP</dt>
+          <dd>Lunas</dd>
+        </dl>
 
-      <ul>
-        <li><a href="riwayat.html">Lihat Riwayat</a></li>
-        <li><a href="dashboard.html">Kembali ke Beranda</a></li>
-      </ul>
-    </section>
+        <ul>
+          <li><a href="riwayat.html">Lihat Riwayat</a></li>
+          <li><a href="dashboard.html">Kembali ke Beranda</a></li>
+        </ul>
+      </section>
+    </main>
 
-  </main>
-
-  <footer>
-    <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
-    <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
-  </footer>
-
-</body>
+    <footer>
+      <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
+      <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
+    </footer>
+  </body>
 </html>

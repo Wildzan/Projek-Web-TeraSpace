@@ -1,77 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beranda - Teras JTI</title>
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components/button.css">
-  <link rel="stylesheet" href="assets/css/components/card.css">
-  <link rel="stylesheet" href="assets/css/components/form.css">
-  <link rel="stylesheet" href="assets/css/components/status.css">
-  <link rel="stylesheet" href="assets/css/components/table.css">
-</head>
-<body>
-    <header>
-        <h1>Teras JTI</h1>
-        <p><a href="#">Notifikasi</a></p>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components/button.css" />
+    <link rel="stylesheet" href="assets/css/components/card.css" />
+    <link rel="stylesheet" href="assets/css/components/form.css" />
+    <link rel="stylesheet" href="assets/css/components/status.css" />
+    <link rel="stylesheet" href="assets/css/components/table.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-kiri">
+        <a href="dashboard.html" class="brand">
+          <img
+            src="assets/images/logo.png"
+            alt="Logo Teras JTI"
+            class="logo-img"
+          />
+          <span class="brand-title">Teras JTI</span>
+        </a>
+
+        <nav class="nav-utama">
+          <a href="dashboard.html" class="nav-link active">Beranda</a>
+          <a href="riwayat.html" class="nav-link">Riwayat</a>
+          <a href="profil.html" class="nav-link">Profil</a>
+        </nav>
+      </div>
+
+      <div class="topbar-kanan">
+        <a href="#" class="notif-btn" aria-label="Notifikasi">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </a>
+
+        <div class="user-info">
+          <span class="user-avatar">NP</span>
+          <span class="user-name">Nama Pengguna</span>
+        </div>
+      </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="dashboard.html">Beranda</a></li>
-            <li><a href="riwayat.html">Riwayat</a></li>
-            <li><a href="profil.html">Profil</a></li>
-        </ul>
-    </nav>
 
     <main>
-        <section>
-            <h2>Cari Tempat</h2>
-            <form>
-                <label for="cari">Cari tempat atau ruangan</label><br>
-                <input type="search" id="cari" placeholder="Cari tempat atau ruangan">
-                <button type="submit">Cari</button>
-            </form>
-        </section>
-        <section>
-            <h2>Filter</h2>
-            <ul class="chip-list">
-                <li><a href="dashboard.html">Semua</a></li>
-                <li><a href="dashboard.html">Gratis</a></li>
-                <li><a href="dashboard.html">Berbayar (DP)</a></li>
-            </ul>
-        </section>
-        <section>
-            <h2>Tempat Tersedia</h2>
+      <section>
+        <h2>Cari Tempat</h2>
+        <form>
+          <label for="cari">Cari tempat atau ruangan</label><br />
+          <input
+            type="search"
+            id="cari"
+            placeholder="Cari tempat atau ruangan"
+          />
+          <button type="submit">Cari</button>
+        </form>
+      </section>
+      <section>
+        <h2>Filter</h2>
+        <ul class="chip-list">
+          <li><a href="dashboard.html">Semua</a></li>
+          <li><a href="dashboard.html">Gratis</a></li>
+          <li><a href="dashboard.html">Berbayar (DP)</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Tempat Tersedia</h2>
 
-            <article>
-                <figure>
-                    <img src="assets/images/tempat.jpeg" alt="Foto Ruang Diskusi Teras JTI" width="320" height="180">
-                    <figcaption>Foto Ruang Diskusi</figcaption>
-                </figure>
-                <h3>Ruang Diskusi</h3>
-                <p><strong class="label label-gratis">GRATIS</strong></p>
-                <p>Kapasitas 6 orang</p>
-                <p><a class="tombol" href="detail-tempat.html">Lihat Jadwal</a></p>
-            </article>
+        <article>
+          <figure>
+            <img
+              src="assets/images/tempat.jpeg"
+              alt="Foto Ruang Diskusi Teras JTI"
+              width="320"
+              height="180"
+            />
+            <figcaption>Foto Ruang Diskusi</figcaption>
+          </figure>
+          <h3>Ruang Diskusi</h3>
+          <p><strong class="label label-gratis">GRATIS</strong></p>
+          <p>Kapasitas 6 orang</p>
+          <p><a class="tombol" href="detail-tempat.html">Lihat Jadwal</a></p>
+        </article>
 
-            <article>
-                <figure>
-                    <img src="assets/images/aulamini.webp" alt="Foto Aula Mini Teras JTI" width="320" height="186">
-                    <figcaption>Foto Aula Mini</figcaption>
-                </figure>
-                <h3>Aula Mini</h3>
-                <p><strong class="label label-dp">DP Rp 50.000</strong></p>
-                <p>Kapasitas 8 orang</p>
-                <p><a class="tombol" href="detail-tempat.html">Lihat Jadwal</a></p>
-            </article>
-        </section>
+        <article>
+          <figure>
+            <img
+              src="assets/images/aulamini.webp"
+              alt="Foto Aula Mini Teras JTI"
+              width="320"
+              height="186"
+            />
+            <figcaption>Foto Aula Mini</figcaption>
+          </figure>
+          <h3>Aula Mini</h3>
+          <p><strong class="label label-dp">DP Rp 50.000</strong></p>
+          <p>Kapasitas 8 orang</p>
+          <p><a class="tombol" href="detail-tempat.html">Lihat Jadwal</a></p>
+        </article>
+      </section>
     </main>
 
     <footer>
-        <p> 2026 Teras JTI - Politeknik Negeri Jember</p>
+      <p>2026 Teras JTI - Politeknik Negeri Jember</p>
     </footer>
-
-</body>
+  </body>
 </html>

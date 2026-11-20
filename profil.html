@@ -1,100 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profil - Teras JTI</title>
-    <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components/button.css">
-  <link rel="stylesheet" href="assets/css/components/card.css">
-  <link rel="stylesheet" href="assets/css/components/form.css">
-  <link rel="stylesheet" href="assets/css/components/status.css">
-  <link rel="stylesheet" href="assets/css/components/table.css">
-</head>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components/button.css" />
+    <link rel="stylesheet" href="assets/css/components/card.css" />
+    <link rel="stylesheet" href="assets/css/components/form.css" />
+    <link rel="stylesheet" href="assets/css/components/status.css" />
+    <link rel="stylesheet" href="assets/css/components/table.css" />
+  </head>
 
   <body>
-    <header>
-      <h1>Profil</h1>
-      <a class="lonceng" href="#" aria-label="Notifikasi">&#128276;</a>
+    <header class="topbar">
+      <div class="topbar-kiri">
+        <a href="dashboard.html" class="brand">
+          <img
+            src="assets/images/logo.png"
+            alt="Logo Teras JTI"
+            class="logo-img"
+          />
+          <span class="brand-title">Teras JTI</span>
+        </a>
+
+        <nav class="nav-utama">
+          <a href="dashboard.html" class="nav-link">Beranda</a>
+          <a href="riwayat.html" class="nav-link">Riwayat</a>
+          <a href="profil.html" class="nav-link active">Profil</a>
+        </nav>
+      </div>
+
+      <div class="topbar-kanan">
+        <a href="#" class="notif-btn" aria-label="Notifikasi">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </a>
+
+        <div class="user-info">
+          <span class="user-avatar">NP</span>
+          <span class="user-name">Nama Pengguna</span>
+        </div>
+      </div>
     </header>
 
-    <main>
-      <section>
-        <div class="profil-kartu">
-          <span class="foto" aria-hidden="true">&#128100;</span>
+    <main class="profil-page">
+      <div class="profil-container">
+        <h1 class="profil-heading">Profil</h1>
 
-          <div>
-            <b>Nama Pengguna</b>
-            <p>nama@email.com</p>
+        <!-- Kartu Info Pengguna -->
+        <section class="profil-card profil-user-card">
+          <div class="profil-avatar">NP</div>
+          <div class="profil-user-meta">
+            <h2 class="profil-nama">Nama Pengguna</h2>
+            <p class="profil-email">nama@email.com</p>
           </div>
-        </div>
+        </section>
 
-        <ul class="daftar-menu">
-          <li>
-            <a href="#">
-              <span aria-hidden="true">&#128100;</span>
-              <span>Ubah Profil</span>
-              <span aria-hidden="true">&rsaquo;</span>
-            </a>
-          </li>
+        <!-- Kartu Daftar Menu -->
+        <section class="profil-card profil-menu-list">
+          <a href="#ubah-profil" class="profil-menu-item">
+            <span>Ubah Profil</span>
+            <span class="profil-chevron" aria-hidden="true">&rsaquo;</span>
+          </a>
 
-          <li>
-            <a href="#">
-              <span aria-hidden="true">&#63;</span>
-              <span>Pusat Bantuan</span>
-              <span aria-hidden="true">&rsaquo;</span>
-            </a>
-          </li>
+          <a href="#keamanan" class="profil-menu-item">
+            <span>Keamanan</span>
+            <span class="profil-chevron" aria-hidden="true">&rsaquo;</span>
+          </a>
 
-          <li>
-            <a href="#">
-              <span aria-hidden="true">&#9776;</span>
-              <span>Syarat &amp; Ketentuan</span>
-              <span aria-hidden="true">&rsaquo;</span>
-            </a>
-          </li>
+          <a href="#syarat-ketentuan" class="profil-menu-item">
+            <span>Syarat &amp; Ketentuan</span>
+            <span class="profil-chevron" aria-hidden="true">&rsaquo;</span>
+          </a>
 
-          <li>
-            <a class="keluar" href="index.html">
-              <span aria-hidden="true">&#10162;</span>
-              <span>Keluar</span>
-            </a>
-          </li>
-        </ul>
-      </section>
+          <a href="index.html" class="profil-menu-item profil-logout">
+            <span>Keluar</span>
+          </a>
+        </section>
+      </div>
     </main>
-
-    <nav aria-label="Navigasi utama">
-      <ul>
-        <li>
-          <a href="dashboard.html">
-            <span aria-hidden="true">&#8962;</span>
-            Beranda
-          </a>
-        </li>
-
-        <li>
-          <a href="riwayat.html">
-            <span aria-hidden="true">&#8635;</span>
-            Riwayat
-          </a>
-        </li>
-
-        <li>
-          <a href="profil.html" class="aktif" aria-current="page">
-            <span aria-hidden="true">&#128100;</span>
-            Profil
-          </a>
-        </li>
-
-        <li>
-          <a href="about/tentang.html">
-            <span aria-hidden="true">&#128100;</span>
-            Tentang Kami
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <footer>
+      <p>2026 Teras JTI - Politeknik Negeri Jember</p>
+    </footer>
   </body>
 </html>
