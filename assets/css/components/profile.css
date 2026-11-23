@@ -1,0 +1,392 @@
+/* =========================================
+   KOMPONEN HALAMAN PROFIL (LANDING PAGE HYBRID)
+   Teras JTI - Kelompok 4 (NoBugNoCry)
+   ========================================= */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #3b82f6 100%);
+  color: #ffffff;
+  padding: 64px 20px 80px;
+  overflow: hidden;
+  border-bottom: 4px solid #f59e0b;
+}
+
+.hero-content {
+  max-width: var(--lebar);
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.hero-desc {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.6;
+  max-width: 680px;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+.btn-hero-primary {
+  background-color: #f59e0b;
+  color: #111827;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+.btn-hero-primary:hover {
+  background-color: #d97706;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-hero-secondary {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: background-color 0.2s, border-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-hero-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item h3 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #fbbf24;
+  margin: 0 0 4px;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* Section Header Umum */
+.section-heading-wrap {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 36px;
+}
+
+.section-badge {
+  display: inline-block;
+  background-color: var(--biru-muda);
+  color: var(--biru-tua);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--teks);
+}
+
+.section-subtitle {
+  color: var(--abu);
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+/* Feature Cards Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.feature-box {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius-besar);
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--biru-muda);
+  color: var(--biru);
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.feature-box h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.feature-box p {
+  color: var(--abu);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Fasilitas Showcase Cards */
+.fasilitas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.fasilitas-card {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius-besar);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.fasilitas-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.fasilitas-thumb {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.fasilitas-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.fasilitas-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.fasilitas-body h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.fasilitas-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 16px;
+}
+
+.spec-pill {
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.fasilitas-body .btn-booking {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+}
+
+/* Galeri Carousel Wrapper */
+.galeri-carousel-wrap {
+  border-radius: var(--radius-besar);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--garis);
+}
+
+.carousel-item img {
+  height: 420px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.carousel-caption {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  bottom: 24px;
+}
+
+/* Jadwal & Aturan 2 Kolom */
+.jadwal-aturan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .jadwal-aturan-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-card {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius-besar);
+  padding: 24px;
+}
+
+.info-card h3 {
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tim Developer Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.team-card {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+
+.team-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--biru-muda);
+  color: var(--biru);
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+  font-size: 1.1rem;
+}
+
+.team-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.team-role {
+  font-size: 0.78rem;
+  color: var(--abu);
+  margin: 0;
+}
+
+/* Kontak Section */
+.kontak-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .kontak-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lokasi-box {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: var(--radius-besar);
+  padding: 24px;
+}
+
+.cta-banner {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  color: #ffffff;
+  border-radius: var(--radius-besar);
+  padding: 40px 32px;
+  text-align: center;
+  margin-top: 48px;
+}
+
+.cta-banner h2 {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 1.75rem;
+}
+
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 580px;
+  margin: 0 auto 24px;
+}
