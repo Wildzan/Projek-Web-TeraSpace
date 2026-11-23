@@ -10,7 +10,7 @@
   color: #ffffff;
   padding: 64px 20px 80px;
   overflow: hidden;
-  border-bottom: 4px solid #f59e0b;
+  border-bottom: 4px solid #38bdf8;
 }
 
 .hero-content {
@@ -56,13 +56,15 @@
 }
 
 .btn-hero-primary {
-  background-color: #f59e0b;
+  background-color: #38bdf8;
   color: #111827;
   font-weight: 600;
   padding: 12px 28px;
   border-radius: var(--radius);
   text-decoration: none;
-  transition: transform 0.2s, background-color 0.2s;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -70,9 +72,10 @@
 }
 
 .btn-hero-primary:hover {
-  background-color: #d97706;
+  background-color: #0ea5e9;
   color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.48);
 }
 
 .btn-hero-secondary {
@@ -83,7 +86,9 @@
   border-radius: var(--radius);
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  transition: background-color 0.2s, border-color 0.2s;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -106,7 +111,7 @@
 .stat-item h3 {
   font-size: 1.85rem;
   font-weight: 700;
-  color: #fbbf24;
+  color: #38bdf8;
   margin: 0 0 4px;
 }
 
@@ -161,7 +166,9 @@
   border: 1px solid var(--garis);
   border-radius: var(--radius-besar);
   padding: 24px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .feature-box:hover {
@@ -389,4 +396,22 @@
   color: rgba(255, 255, 255, 0.9);
   max-width: 580px;
   margin: 0 auto 24px;
+}
+/*Bootstrap*/
+.btn-cyan-terang {
+  background-color: #38bdf8; /* Biru cyan cerah */
+  border: 1px solid #38bdf8;
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-cyan-terang:hover,
+.btn-cyan-terang:focus {
+  background-color: #22d3ee; /* Sedikit lebih pekat saat di-hover */
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.45);
 }
