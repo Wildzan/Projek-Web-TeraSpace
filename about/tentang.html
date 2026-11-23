@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tentang Kami - Teras JTI</title>
+  <title>Tentang Kami &amp; Tim Pengembang - Teras JTI</title>
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components/button.css">
@@ -14,128 +20,150 @@
 </head>
 <body>
 
-  <header>
-    <h1>Tentang Kami</h1>
-    <p>Teras JTI - Reservasi tempat Co-Working Space Jurusan Teknologi Informasi</p>
+  <!-- Topbar Header -->
+  <header class="topbar">
+    <div class="topbar-kiri">
+      <a href="../index.html" class="brand" title="Kembali ke Profil Utama">
+        <img
+          src="../assets/images/logo.png"
+          alt="Logo Teras JTI"
+          class="logo-img"
+        />
+        <span class="brand-title">Teras JTI</span>
+      </a>
+
+      <nav class="nav-utama" aria-label="Navigasi Utama">
+        <a href="../index.html" class="nav-link">Profil Utama</a>
+        <a href="../dashboard.html" class="nav-link">Reservasi</a>
+        <a href="../riwayat.html" class="nav-link">Riwayat</a>
+        <a href="../profil.html" class="nav-link">Akun</a>
+      </nav>
+    </div>
+
+    <div class="topbar-kanan">
+      <a href="../profil.html" class="user-info text-decoration-none">
+        <span class="user-avatar">FA</span>
+        <span class="user-name">Farrel Ananta</span>
+      </a>
+    </div>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="../dashboard.html">Beranda</a></li>
-      <li><a href="../riwayat.html">Riwayat</a></li>
-      <li><a href="../profil.html">Profil</a></li>
-    </ul>
-  </nav>
-
   <main>
+    <!-- Breadcrumb Navigasi -->
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none">Profil Utama</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Tentang Kami &amp; Proyek</li>
+      </ol>
+    </nav>
 
     <section>
-      <h2>Tentang Aplikasi</h2>
+      <h2>Tentang Inisiatif Teras JTI</h2>
       <p>
-        Teras JTI adalah aplikasi untuk memesan (reservasi) tempat di Teras JTI secara online.
-        Pengguna tidak perlu datang langsung ke lokasi atau menunggu konfirmasi manual dari
-        pengelola hanya untuk memesan tempat.
+        Teras JTI adalah platform profil dan reservasi ruang belajar kolaboratif (co-working space) di lingkungan Jurusan Teknologi Informasi Politeknik Negeri Jember. Inisiatif ini dikembangkan untuk mendigitalisasi proses pemesanan tempat agar mahasiswa tidak perlu datang langsung atau menunggu konfirmasi manual dari pengelola.
       </p>
       <p>
-        Untuk tempat berbayar, pengguna membayar uang muka (DP) lewat QRIS atau transfer.
-        Tempat yang tidak berbayar langsung terkonfirmasi tanpa pembayaran.
+        Untuk ruang diskusi umum disediakan secara gratis tanpa syarat berbayar, sedangkan untuk Aula Mini didukung sistem uang muka (DP) ringan melalui QRIS atau transfer guna menjamin kepastian reservasi kegiatan skala sedang.
       </p>
     </section>
 
     <section>
-      <h2>Masalah yang Ingin Kami Selesaikan</h2>
-      <p>Dari wawancara dan observasi langsung di Teras JTI, kami menemukan dua masalah utama:</p>
-      <ol>
-        <li>Reservasi masih manual atau datang langsung, sehingga jadwal berpotensi bentrok.</li>
-        <li>Pengantaran pesanan menu mini cafe terlambat 1 sampai 2 kali per hari.</li>
+      <h2>Latar Belakang &amp; Identifikasi Masalah</h2>
+      <p>Berdasarkan observasi dan wawancara dengan mahasiswa serta pengelola gedung JTI Polije, ditemukan dua tantangan utama:</p>
+      <ol class="lh-lg text-secondary">
+        <li><strong>Jadwal Ruangan Bentrok:</strong> Penggunaan ruang diskusi dan aula mini kerap tumpang tindih karena pencatatan manual di papan tulis atau buku reservasi resepsionis.</li>
+        <li><strong>Ketidakpastian Ketersediaan:</strong> Mahasiswa sering kali datang beramai-ramai ke lokasi namun mendapati seluruh meja/ruangan sudah penuh terisi tanpa informasi sebelumnya.</li>
       </ol>
     </section>
 
     <section>
-      <h2>Fitur Utama</h2>
-      <ul>
-        <li>Melihat daftar tempat beserta kapasitas dan biayanya</li>
-        <li>Memeriksa ketersediaan tempat per tanggal dan jam</li>
-        <li>Reservasi tempat dengan pengecekan jadwal bentrok</li>
-        <li>Pembayaran DP untuk tempat berbayar (QRIS atau transfer)</li>
-        <li>Notifikasi status reservasi</li>
-        <li>Riwayat reservasi dan pembatalan</li>
+      <h2>Fitur Kunci Sistem Hybrid</h2>
+      <ul class="lh-lg text-secondary">
+        <li>Showcase profil lengkap, galeri visual, dan jadwal layanan resmi Teras JTI.</li>
+        <li>Pengecekan ketersediaan kalender slot jam secara instan tanpa login awal.</li>
+        <li>Simulasi reservasi mandiri dengan pencegahan pemilihan slot yang sudah terisi.</li>
+        <li>Simulasi konfirmasi pembayaran DP via QRIS dengan timer batas waktu transaksi.</li>
+        <li>Panel riwayat pemesanan aktif dan opsi pembatalan fleksibel.</li>
       </ul>
     </section>
 
     <section>
-      <h2>Tim Kami</h2>
-      <p>
-        Kami adalah Kelompok 4 (NoBugNoCry), Golongan C, Program Studi Teknik Informatika,
-        Jurusan Teknologi Informasi, Politeknik Negeri Jember.
+      <h2>Tim Pengembang: Kelompok 4 (NoBugNoCry)</h2>
+      <p class="text-secondary">
+        Proyek ini dikembangkan oleh mahasiswa Golongan C, Program Studi D4 Teknik Informatika, Jurusan Teknologi Informasi, Politeknik Negeri Jember:
       </p>
 
-      <table>
-        <caption>Anggota Kelompok 4 - NoBugNoCry</caption>
-        <thead>
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Peran</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Farrel Ananta Firmansyah</td>
-            <td>Design Engineer / Full-Stack Generalist</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Wildzan Suryabuana Jarot</td>
-            <td>Frontend Developer</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Achmad Solikhin</td>
-            <td>UI/UX Designer dan QA / Tester</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Deva Riski Anjani</td>
-            <td>Project Manager</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Firsty Maylisha Putri</td>
-            <td>Backend Developer</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle">
+          <caption>Anggota Kelompok 4 &middot; NoBugNoCry (Golongan C)</caption>
+          <thead class="table-light">
+            <tr>
+              <th scope="col" style="width: 50px;">No</th>
+              <th scope="col">Nama Lengkap</th>
+              <th scope="col">Peran &amp; Tanggung Jawab</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td class="fw-bold">Farrel Ananta Firmansyah</td>
+              <td>Design Engineer &amp; Full-Stack Generalist</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="fw-bold">Wildzan Suryabuana Jarot</td>
+              <td>Frontend Developer</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td class="fw-bold">Achmad Solikhin</td>
+              <td>UI/UX Designer &amp; QA Tester</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="fw-bold">Deva Riski Anjani</td>
+              <td>Project Manager</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="fw-bold">Firsty Maylisha Putri</td>
+              <td>Backend Developer</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section>
-      <h2>Informasi Proyek</h2>
+      <h2>Informasi Mata Kuliah &amp; Proyek</h2>
       <dl>
         <dt>Mata Kuliah</dt>
         <dd>Workshop Desain Aplikasi (TIF110809)</dd>
 
-        <dt>Tahap Saat Ini</dt>
-        <dd>Implementasi halaman web statis dengan HTML (Minggu 11)</dd>
+        <dt>Institusi</dt>
+        <dd>Politeknik Negeri Jember (Polije)</dd>
 
-        <dt>Acuan Desain</dt>
-        <dd>Prototype Figma dan Laporan Perancangan Teras JTI (Minggu 10)</dd>
+        <dt>Arah Pengembangan</dt>
+        <dd>Website Profil Hybrid dengan Layanan Reservasi Interaktif</dd>
       </dl>
-    </section>
 
-    <section>
-      <h2>Mulai Gunakan Teras JTI</h2>
-      <p>
-        <a href="../dashboard.html">Lihat daftar tempat di Beranda</a>
-      </p>
+      <div class="mt-4 pt-3 border-top d-flex gap-2">
+        <a href="../index.html" class="btn btn-outline-primary btn-sm">
+          &larr; Lihat Website Profil Utama
+        </a>
+        <a href="../dashboard.html" class="btn btn-primary btn-sm">
+          Buka Katalog Reservasi &rarr;
+        </a>
+      </div>
     </section>
-
   </main>
 
   <footer>
-    <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
-    <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
+    <p>&copy; 2026 Teras JTI - Politeknik Negeri Jember &middot; Kelompok 4 (NoBugNoCry)</p>
+    <p class="small text-muted">Seluruh data pada halaman ini adalah simulasi untuk keperluan evaluasi praktikum.</p>
   </footer>
 
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

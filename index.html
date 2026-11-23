@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Masuk - Teras JTI</title>
+    <title>Teras JTI - Website Profil &amp; Reservasi Tempat Co-Working Space</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS (Loaded after Bootstrap to preserve brand styling) -->
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/components/button.css" />
@@ -11,65 +17,576 @@
     <link rel="stylesheet" href="assets/css/components/form.css" />
     <link rel="stylesheet" href="assets/css/components/status.css" />
     <link rel="stylesheet" href="assets/css/components/table.css" />
+    <link rel="stylesheet" href="assets/css/components/profile.css" />
   </head>
-  <body class="login-body">
-    <div class="login-wrapper">
-      <!-- Kolom Kiri -->
-      <aside class="login-brand">
-        <div class="login-brand-inner">
-          <div class="login-logo-box">
-            <img
-              src="assets/images/logo.png"
-              alt="Logo Teras JTI"
-              class="login-logo-img"
-            />
+  <body>
+    <!-- Topbar Navigasi Publik (Responsive Bootstrap Navbar) -->
+    <header class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-3 px-3 px-md-4">
+      <div class="container-fluid px-0" style="max-width: var(--lebar)">
+        <a class="navbar-brand d-flex align-items-center gap-2 m-0 text-dark fw-bold" href="index.html">
+          <img
+            src="assets/images/logo.png"
+            alt="Logo Teras JTI"
+            width="36"
+            height="36"
+            class="rounded object-fit-cover"
+          />
+          <span style="font-family: var(--font-judul); font-size: 1.15rem; ">TeraSpace</span>
+        </a>
+
+        <!-- Hamburger Button untuk Layar Mobile -->
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navPublicMenu"
+          aria-controls="navPublicMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigasi"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Link Navigasi -->
+        <div class="collapse navbar-collapse justify-content-between" id="navPublicMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1 gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-primary active" aria-current="page" href="#beranda">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-secondary" href="#tentang">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-secondary" href="#fasilitas">Fasilitas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-secondary" href="#galeri">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-secondary" href="#jadwal">Jadwal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-secondary" href="#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-secondary" href="#kontak">Kontak</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+            <a href="login.html" class="btn btn-outline-primary btn-sm px-3 fw-semibold">
+              Masuk
+            </a>
+            <a href="dashboard.html" class="btn btn-primary btn-sm px-3 fw-semibold">
+              Pesan Ruang &rarr;
+            </a>
           </div>
-          <h1 class="login-brand-title">Teras JTI</h1>
-          <p class="login-brand-desc">
-            Reservasi tempat Jurusan Teknologi Informasi, dari mana saja.
+        </div>
+      </div>
+    </header>
+
+    <main id="beranda">
+      <!-- 1. Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Ruang Kolaborasi &amp; Reservasi Tempat Nyaman di Kampus
+          </h1>
+          <p class="hero-desc">
+            Teras JTI hadir untuk mendukung produktivitas mahasiswa dan dosen Jurusan Teknologi Informasi Politeknik Negeri Jember. Nikmati fasilitas diskusi, seminar mini, dan belajar mandiri dengan pemesanan jadwal yang praktis tanpa bentrok.
+          </p>
+          <div class="hero-actions">
+            <a href="dashboard.html" class="btn-hero-primary">
+              Cari &amp; Reservasi Ruangan
+            </a>
+            <a href="#fasilitas" class="btn-hero-secondary">
+              Lihat Fasilitas &darr;
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>4+ Ruangan</h3>
+              <p>Ruang Diskusi, Aula Mini, &amp; Hot Desk</p>
+            </div>
+            <div class="stat-item">
+              <h3>Free Wi-Fi</h3>
+              <p>Akses internet berkecepatan tinggi</p>
+            </div>
+            <div class="stat-item">
+              <h3>50+ Kapasitas</h3>
+              <p>Daya tampung nyaman &amp; ber-AC</p>
+            </div>
+            <div class="stat-item">
+              <h3>08:00 - 16:00</h3>
+              <p>Jam layanan operasional Senin - Jumat</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Section Tentang Kami & Masalah yang Diselesaikan -->
+      <section id="tentang" class="py-5" style="max-width: var(--lebar); margin: 0 auto; padding-left: 16px; padding-right: 16px;">
+        <div class="section-heading-wrap">
+          <span class="section-badge">Mengenal Teras JTI</span>
+          <h2 class="section-title">Dedikasi untuk Kolaborasi Akademik</h2>
+          <p class="section-subtitle">
+            Mengubah cara mahasiswa memesan ruang belajar dari manual menjadi serba digital, transparan, dan terstruktur.
           </p>
         </div>
-      </aside>
 
-      <!-- Kolom Kanan -->
-      <main class="login-panel">
-        <div class="login-box">
-          <h2 class="login-heading">Masuk</h2>
+        <div class="features-grid mb-5">
+          <div class="feature-box">
+            <div class="feature-icon">&#128197;</div>
+            <h3>Pencegahan Jadwal Bentrok</h3>
+            <p>
+              Sistem kalender digital memungkinkan pengecekan ketersediaan slot per jam secara langsung sehingga tidak ada lagi perebutan ruangan di tempat.
+            </p>
+          </div>
 
-          <form class="login-form" action="dashboard.html" method="get">
-            <div class="form-group">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="form-input"
-                placeholder="nama@email.com"
-                required
+          <div class="feature-box">
+            <div class="feature-icon">&#9889;</div>
+            <h3>Reservasi Mandiri Cepat</h3>
+            <p>
+              Pengguna cukup memilih tanggal, slot jam, dan kapasitas. Ruang diskusi gratis dapat dikonfirmasi seketika tanpa menunggu persetujuan berbelit.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon">&#128179;</div>
+            <h3>Sistem DP Aman (Aula Mini)</h3>
+            <p>
+              Dukungan pembayaran uang muka fleksibel via QRIS dan transfer bank untuk ruangan representatif kegiatan himpunan atau seminar mini.
+            </p>
+          </div>
+        </div>
+
+      <!-- 3. Section Fasilitas & Ruangan -->
+      <section id="fasilitas" class="py-5 bg-white border-top border-bottom">
+        <div style="max-width: var(--lebar); margin: 0 auto; padding-left: 16px; padding-right: 16px;">
+          <div class="section-heading-wrap">
+            <span class="section-badge">Pilihan Ruangan</span>
+            <h2 class="section-title">Fasilitas Nyaman Sesuai Kebutuhanmu</h2>
+            <p class="section-subtitle">
+              Pilih ruang belajar yang tepat untuk kelompok kecil atau kegiatan seminar yang lebih besar.
+            </p>
+          </div>
+
+          <div class="fasilitas-grid">
+            <!-- Kartu 1: Ruang Diskusi -->
+            <article class="fasilitas-card">
+              <img
+                src="assets/images/tempat.jpeg"
+                alt="Foto Ruang Diskusi Teras JTI"
+                class="fasilitas-thumb"
               />
-            </div>
+              <div class="fasilitas-body">
+                <div class="fasilitas-badges">
+                  <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill">
+                    GRATIS
+                  </span>
+                  <span class="badge bg-light text-secondary border px-2 py-1 rounded-pill">
+                    Maks. 6-8 Orang
+                  </span>
+                </div>
+                <h3>Ruang Diskusi</h3>
+                <p class="text-muted small">
+                  Cocok untuk kerja kelompok tugas akhir, brainstorming proyek aplikasi, atau bimbingan akademik bersama dosen.
+                </p>
+                <div class="fasilitas-specs">
+                  <span class="spec-pill">Wi-Fi Cepat</span>
+                  <span class="spec-pill">Proyektor HDMI</span>
+                  <span class="spec-pill">Whiteboard</span>
+                  <span class="spec-pill">Stop Kontak</span>
+                  <span class="spec-pill">Ruang Ber-AC</span>
+                </div>
+                <a href="detail-tempat.html" class="btn btn-primary btn-sm btn-booking">
+                  Lihat Jadwal &amp; Reservasi
+                </a>
+              </div>
+            </article>
 
-            <div class="form-group">
-              <label for="sandi" class="form-label">Kata Sandi</label>
-              <input
-                type="password"
-                id="sandi"
-                name="sandi"
-                class="form-input"
-                placeholder="Masukkan kata sandi"
-                required
+            <!-- Kartu 2: Aula Mini -->
+            <article class="fasilitas-card">
+              <img
+                src="assets/images/aulamini.webp"
+                alt="Foto Aula Mini Teras JTI"
+                class="fasilitas-thumb"
               />
-            </div>
+              <div class="fasilitas-body">
+                <div class="fasilitas-badges">
+                  <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle px-2 py-1 rounded-pill">
+                    DP Rp 50.000
+                  </span>
+                  <span class="badge bg-light text-secondary border px-2 py-1 rounded-pill">
+                    Maks. 15-20 Orang
+                  </span>
+                </div>
+                <h3>Aula Mini</h3>
+                <p class="text-muted small">
+                  Ruang representatif untuk seminar mini, workshop teknologi, rapat pleno himpunan (HMD/BEM), atau pelatihan skill.
+                </p>
+                <div class="fasilitas-specs">
+                  <span class="spec-pill">Sound System</span>
+                  <span class="spec-pill">Layar LCD Lebar</span>
+                  <span class="spec-pill">Microphone</span>
+                  <span class="spec-pill">Meja Konferensi</span>
+                  <span class="spec-pill">Full AC</span>
+                </div>
+                <a href="detail-tempat.html" class="btn btn-primary btn-sm btn-booking">
+                  Lihat Jadwal &amp; Reservasi
+                </a>
+              </div>
+            </article>
 
-            <button type="submit" class="btn-login">Login</button>
-          </form>
+            <!-- Kartu 3: Hot Desk & Cafe Corner -->
+            <article class="fasilitas-card">
+              <div class="d-flex align-items-center justify-content-center bg-light fasilitas-thumb border-bottom">
+                <span class="fs-1 text-primary">&#9749;</span>
+              </div>
+              <div class="fasilitas-body">
+                <div class="fasilitas-badges">
+                  <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle px-2 py-1 rounded-pill">
+                    AREA UMUM
+                  </span>
+                  <span class="badge bg-light text-secondary border px-2 py-1 rounded-pill">
+                    Walk-in Access
+                  </span>
+                </div>
+                <h3>Hot Desk &amp; Mini Cafe</h3>
+                <p class="text-muted small">
+                  Meja belajar individual dengan suasana rileks di teras, didukung mini cafe untuk memesan minuman dan kudapan ringan.
+                </p>
+                <div class="fasilitas-specs">
+                  <span class="spec-pill">Akses Bebas</span>
+                  <span class="spec-pill">Menu Kopi &amp; Snack</span>
+                  <span class="spec-pill">Stop Kontak Meja</span>
+                  <span class="spec-pill">Outdoor Cozy</span>
+                </div>
+                <a href="dashboard.html" class="btn btn-outline-secondary btn-sm btn-booking">
+                  Lihat Denah Area
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-          <p class="login-footer-text">
-            Belum punya akun?
-            <a href="registrasi.html" class="login-link">Daftar</a>
+      <!-- 4. Section Galeri (Bootstrap Carousel) -->
+      <section id="galeri" class="py-5" style="max-width: var(--lebar); margin: 0 auto; padding-left: 16px; padding-right: 16px;">
+        <div class="section-heading-wrap">
+          <span class="section-badge">Dokumentasi Suasana</span>
+          <h2 class="section-title">Galeri Teras JTI</h2>
+          <p class="section-subtitle">
+            Sekilas pandang fasilitas modern dan aktivitas kolaboratif di lingkungan Jurusan Teknologi Informasi.
           </p>
         </div>
-      </main>
-    </div>
+
+        <div class="galeri-carousel-wrap">
+          <div id="carouselGaleriTeras" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselGaleriTeras" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselGaleriTeras" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="4000">
+                <img
+                  src="assets/images/tempat.jpeg"
+                  class="d-block w-100"
+                  alt="Suasana Ruang Diskusi Teras JTI"
+                />
+                <div class="carousel-caption d-none d-md-block text-white">
+                  <h4 class="fw-bold mb-1">Ruang Diskusi Mahasiswa</h4>
+                  <p class="small mb-0">Dilengkapi fasilitas proyektor dan koneksi internet cepat untuk presentasi tugas akhir.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item" data-bs-interval="4000">
+                <img
+                  src="assets/images/aulamini.webp"
+                  class="d-block w-100"
+                  alt="Fasilitas Aula Mini Teras JTI"
+                />
+                <div class="carousel-caption d-none d-md-block text-white">
+                  <h4 class="fw-bold mb-1">Aula Mini Representatif</h4>
+                  <p class="small mb-0">Cocok untuk workshop, sharing session, dan pelatihan divisi organisasi kampus.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tombol Navigasi Carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleriTeras" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Sebelumnya</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleriTeras" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Berikutnya</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Section Jam Operasional & Aturan -->
+      <section id="jadwal" class="py-5 bg-white border-top border-bottom">
+        <div style="max-width: var(--lebar); margin: 0 auto; padding-left: 16px; padding-right: 16px;">
+          <div class="section-heading-wrap">
+            <span class="section-badge">Jadwal &amp; Tata Tertib</span>
+            <h2 class="section-title">Waktu Layanan &amp; Ketentuan</h2>
+            <p class="section-subtitle">
+              Patuhi aturan bersama demi kenyamanan seluruh civitas akademika Politeknik Negeri Jember.
+            </p>
+          </div>
+
+          <div class="jadwal-aturan-grid">
+            <!-- Kolom 1: Jam Operasional -->
+            <div class="info-card">
+              <h3>Jam Operasional Layanan</h3>
+              <table class="table table-sm table-bordered m-0 align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Hari</th>
+                    <th scope="col">Jam Layanan</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-medium">Senin - Kamis</td>
+                    <td>08:00 - 16:00 WIB</td>
+                    <td><span class="badge bg-success">Buka</span></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-medium">Jumat</td>
+                    <td>08:00 - 15:30 WIB (Istirahat 11:30 - 13:00)</td>
+                    <td><span class="badge bg-success">Buka</span></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-medium">Sabtu</td>
+                    <td>08:00 - 12:00 WIB</td>
+                    <td><span class="badge bg-warning text-dark">Khusus Agenda</span></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-medium">Minggu &amp; Libur Nasional</td>
+                    <td>-</td>
+                    <td><span class="badge bg-danger">Tutup</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <small class="text-muted d-block mt-3">
+                *Reservasi di luar jam di atas wajib mengajukan izin tertulis ke pihak pengelola gedung JTI.
+              </small>
+            </div>
+
+            <!-- Kolom 2: Tata Tertib -->
+            <div class="info-card">
+              <h3>Tata Tertib Penggunaan</h3>
+              <ol class="m-0 ps-3 text-secondary lh-lg small">
+                <li>Check-in tepat waktu sesuai dengan slot jam reservasi yang dipilih.</li>
+                <li>Jumlah peserta di dalam ruangan dilarang melampaui batas maksimal kapasitas.</li>
+                <li>Menjaga kebersihan meja, membuang sampah pada tempatnya, dan merapikan kembali kursi.</li>
+                <li>Dilarang merusak atau memindahkan perangkat elektronik (proyektor, router Wi-Fi, kabel HDMI).</li>
+                <li>Konfirmasi pembatalan reservasi minimal 1 jam sebelum jadwal dimulai agar slot dapat digunakan mahasiswa lain.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Section FAQ (Bootstrap Accordion) -->
+      <section id="faq" class="py-5" style="max-width: var(--lebar); margin: 0 auto; padding-left: 16px; padding-right: 16px;">
+        <div class="section-heading-wrap">
+          <span class="section-badge">Pertanyaan Umum</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Jawaban cepat untuk hal-hal yang sering ditanyakan seputar layanan Teras JTI.
+          </p>
+        </div>
+
+        <div class="accordion" id="accordionFaqTeras">
+          <!-- Item 1 -->
+          <div class="accordion-item mb-2 border rounded overflow-hidden">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed fw-semibold text-dark bg-white"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="false"
+                aria-controls="collapseOne"
+              >
+                Siapa saja yang berhak menggunakan fasilitas Teras JTI?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionFaqTeras"
+            >
+              <div class="accordion-body text-secondary small">
+                Seluruh mahasiswa, dosen, dan staf di lingkungan Jurusan Teknologi Informasi Politeknik Negeri Jember berhak menggunakan fasilitas ini dengan melakukan pemesanan jadwal terlebih dahulu. Mahasiswa jurusan lain dapat menggunakannya untuk agenda kolaborasi lintas jurusan dengan persetujuan pengelola.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="accordion-item mb-2 border rounded overflow-hidden">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed fw-semibold text-dark bg-white"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Apakah reservasi Ruang Diskusi dipungut biaya?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionFaqTeras"
+            >
+              <div class="accordion-body text-secondary small">
+                Tidak. Ruang Diskusi dapat digunakan secara <strong>GRATIS 100%</strong> untuk keperluan belajar kelompok dan bimbingan tugas mahasiswa aktif Polije.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="accordion-item mb-2 border rounded overflow-hidden">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed fw-semibold text-dark bg-white"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Bagaimana mekanisme pembayaran DP untuk Aula Mini?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionFaqTeras"
+            >
+              <div class="accordion-body text-secondary small">
+                Untuk Aula Mini dikenakan uang muka (DP) sebesar Rp 50.000 guna menahan slot jadwal kegiatan. Pengguna dapat memilih pembayaran melalui scan QRIS atau transfer ke rekening resmi pengelola, lalu mengunggah bukti bayar di halaman pembayaran.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="accordion-item mb-2 border rounded overflow-hidden">
+            <h2 class="accordion-header" id="headingFour">
+              <button
+                class="accordion-button collapsed fw-semibold text-dark bg-white"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                Bagaimana jika kami terlambat hadir atau ingin membatalkan?
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFour"
+              data-bs-parent="#accordionFaqTeras"
+            >
+              <div class="accordion-body text-secondary small">
+                Toleransi keterlambatan adalah 15 menit dari jam mulai. Jika berhalangan hadir, silakan lakukan pembatalan melalui menu Riwayat agar ruangan dapat dialihkan kepada rekan mahasiswa yang sedang membutuhkan.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Section Kontak & Lokasi -->
+      <section id="kontak" class="py-5 bg-white border-top">
+        <div style="max-width: var(--lebar); margin: 0 auto; padding-left: 16px; padding-right: 16px;">
+          <div class="section-heading-wrap">
+            <span class="section-badge">Lokasi &amp; Layanan</span>
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p class="section-subtitle">
+              Kunjungi kami langsung di Gedung Jurusan Teknologi Informasi atau hubungi kanal layanan resmi kami.
+            </p>
+          </div>
+
+          <div class="kontak-grid">
+            <div class="lokasi-box">
+              <h3 class="fs-5 fw-bold mb-3">Alamat Lokasi</h3>
+              <p class="text-secondary small mb-3">
+                <strong>Gedung Jurusan Teknologi Informasi (Lantai 1)</strong><br />
+                Politeknik Negeri Jember<br />
+                Jl. Mastrip PO BOX 164, Jember, Jawa Timur 68101
+              </p>
+              <div class="p-3 bg-light rounded border text-muted small">
+                <strong>Petunjuk Arah:</strong> Teras JTI berada di sisi barat lobi utama Gedung JTI, tepat di samping laboratorium komputer multimedia dan mini cafe.
+              </div>
+            </div>
+
+            <div class="lokasi-box">
+              <h3 class="fs-5 fw-bold mb-3">Kontak Bantuan</h3>
+              <ul class="list-unstyled text-secondary small m-0 d-flex flex-column gap-2">
+                <li><strong>Email:</strong> terasjti@polije.ac.id</li>
+                <li><strong>WhatsApp Resepsionis:</strong> +62 812-3456-7890</li>
+                <li><strong>Instagram:</strong> @terasjti.polije</li>
+                <li><strong>Layanan:</strong> Senin - Jumat (08:00 - 16:00 WIB)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CTA Banner Final -->
+          <div class="cta-banner">
+            <h2>Ingin Mengadakan Diskusi atau Belajar Bersama?</h2>
+            <p>
+              Periksa ketersediaan ruangan hari ini dan booking jadwalmu dalam hitungan menit tanpa ribet.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <a href="dashboard.html" class="btn btn-warning px-4 py-2 fw-bold text-dark">
+                Pesan Tempat Sekarang &rarr;
+              </a>
+              <a href="login.html" class="btn btn-outline-light px-4 py-2 fw-semibold">
+                Masuk Akun Mahasiswa
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Terpadu -->
+    <footer class="bg-light border-top py-4 text-center text-muted small">
+      <div style="max-width: var(--lebar); margin: 0 auto; padding-left: 16px; padding-right: 16px;">
+        <p class="fw-semibold text-dark mb-1">
+          &copy; 2026 Teras JTI &middot; Politeknik Negeri Jember
+        </p>
+        <p class="mb-2">
+          Dikembangkan oleh <strong>Kelompok 4 (NoBugNoCry)</strong> &mdash; Golongan C, Program Studi D4 Teknik Informatika.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#beranda" class="text-decoration-none text-muted">Kembali ke Atas</a>
+          &middot;
+          <a href="dashboard.html" class="text-decoration-none text-muted">Katalog Reservasi</a>
+          &middot;
+          <a href="about/tentang.html" class="text-decoration-none text-muted">Dokumentasi Tim</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle & Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/components/navbar.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detail Tempat - Teras JTI</title>
+    <title>Detail Tempat &amp; Reservasi - Teras JTI</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/components/button.css" />
@@ -14,72 +20,80 @@
     <link rel="stylesheet" href="assets/css/detail-tempat.css" />
   </head>
   <body>
+    <!-- Topbar Header -->
     <header class="topbar">
       <div class="topbar-kiri">
-        <a href="dashboard.html" class="brand">
-          <span class="brand-badge">JTI</span>
+        <a href="index.html" class="brand" title="Kembali ke Profil Utama">
+          <img
+            src="assets/images/logo.png"
+            alt="Logo Teras JTI"
+            class="logo-img"
+          />
           <span class="brand-title">Teras JTI</span>
         </a>
         <nav class="nav-utama" aria-label="Navigasi Utama">
-          <a href="dashboard.html" class="nav-link">Beranda</a>
+          <a href="index.html" class="nav-link">Profil Utama</a>
+          <a href="dashboard.html" class="nav-link active">Reservasi</a>
           <a href="riwayat.html" class="nav-link">Riwayat</a>
-          <a href="profil.html" class="nav-link">Profil</a>
+          <a href="profil.html" class="nav-link">Akun</a>
         </nav>
       </div>
 
       <div class="topbar-kanan">
-        <a href="profil.html" class="user-info">
-          <span class="user-avatar">NP</span>
-          <span class="user-name">Nama Pengguna</span>
+        <a href="profil.html" class="user-info text-decoration-none">
+          <span class="user-avatar" id="topbar-avatar">FA</span>
+          <span class="user-name" id="topbar-username">Farrel Ananta</span>
         </a>
       </div>
     </header>
 
     <main class="detail-page">
       <div class="detail-container">
+        <!-- Breadcrumb Navigasi -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a>Beranda</a>
+          <a href="index.html">Profil Utama</a>
           <span>/</span>
-          <span>Ruang Diskusi</span>
+          <a href="dashboard.html">Katalog</a>
           <span>/</span>
-          <span>Reservasi</span>
+          <span>Detail Ruangan</span>
         </nav>
 
         <div class="detail-grid">
-          <!-- Kolom Kiri -->
+          <!-- Kolom Kiri: Info Tempat & Kalender Ketersediaan -->
           <div class="detail-main-col">
-            <!-- Info Tempat -->
+            <!-- Info Tempat Card -->
             <section class="detail-card">
               <div class="tempat-photo-box">
                 <img
-                  src="assets/images/aulamini.webp"
+                  src="assets/images/tempat.jpeg"
                   alt="Foto Ruang Diskusi Teras JTI"
                   class="tempat-photo-img"
+                  id="detail-tempat-img"
                 />
               </div>
 
               <div class="tempat-header">
-                <h1 class="tempat-title">Ruang Diskusi</h1>
-                <span class="dp-badge">GRATIS</span>
+                <h1 class="tempat-title" id="detail-tempat-title">Ruang Diskusi</h1>
+                <span class="dp-badge" id="detail-tempat-badge">GRATIS</span>
               </div>
 
-              <p class="tempat-kapasitas">Kapasitas: 8 orang</p>
+              <p class="tempat-kapasitas">Kapasitas Maksimal: 8 orang &middot; Lokasi: Lantai 1 Gedung JTI</p>
 
               <div class="fasilitas-list">
-                <span class="fasilitas-tag">Wi-Fi</span>
-                <span class="fasilitas-tag">Proyektor</span>
-                <span class="fasilitas-tag">Stop kontak</span>
-                <span class="fasilitas-tag">AC</span>
+                <span class="fasilitas-tag">&#128246; Wi-Fi Cepat</span>
+                <span class="fasilitas-tag">&#128253; Proyektor</span>
+                <span class="fasilitas-tag">&#128268; Stop Kontak</span>
+                <span class="fasilitas-tag">&#10052; AC Dingin</span>
               </div>
 
               <div class="jadwal-list">
                 <div class="jadwal-row">
                   <span class="jadwal-hari">Senin sampai Jumat</span>
-                  <span class="jadwal-jam">08:00 - 16:00</span>
+                  <span class="jadwal-jam">08:00 - 16:00 WIB</span>
                 </div>
                 <div class="jadwal-row">
                   <span class="jadwal-hari">Sabtu</span>
-                  <span class="jadwal-jam">08:00 - 12:00</span>
+                  <span class="jadwal-jam">08:00 - 12:00 WIB</span>
                 </div>
                 <div class="jadwal-row">
                   <span class="jadwal-hari">Minggu</span>
@@ -88,27 +102,24 @@
               </div>
 
               <div class="aturan-box">
-                <h2 class="aturan-heading">Aturan Penggunaan</h2>
+                <h2 class="aturan-heading">Aturan Penggunaan Ruangan</h2>
                 <ol class="aturan-list">
-                  <li>Datang sesuai jadwal reservasi.</li>
-                  <li>Jumlah orang tidak melebihi kapasitas tempat.</li>
-                  <li>Jaga kebersihan dan kerapian tempat.</li>
+                  <li>Datang tepat waktu sesuai jadwal slot yang dipilih.</li>
+                  <li>Jumlah pengguna tidak boleh melebihi kapasitas maksimal ruangan.</li>
+                  <li>Jaga kebersihan, buang sampah, dan matikan proyektor setelah selesai.</li>
                   <li>Batalkan reservasi lebih awal bila berhalangan hadir.</li>
                 </ol>
               </div>
             </section>
 
-            <!-- Kalender Ketersediaan -->
+            <!-- Kalender Ketersediaan Interaktif -->
             <section class="detail-card">
-              <h2 class="kalender-heading">
-                Ketersediaan &middot; Oktober 2026
-              </h2>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="kalender-heading m-0">Pilih Tanggal &middot; November 2026</h2>
+                <span class="badge bg-light text-dark border">Klik tanggal untuk memilih</span>
+              </div>
 
-              <div
-                class="kalender-grid"
-                role="grid"
-                aria-label="Kalender Oktober 2026"
-              >
+              <div class="kalender-grid" role="grid" aria-label="Kalender November 2026">
                 <div class="kalender-day-name">Sen</div>
                 <div class="kalender-day-name">Sel</div>
                 <div class="kalender-day-name">Rab</div>
@@ -117,133 +128,140 @@
                 <div class="kalender-day-name">Sab</div>
                 <div class="kalender-day-name">Min</div>
 
+                <!-- Minggu 1 -->
+                <div class="kalender-date is-empty"></div>
+                <div class="kalender-date is-empty"></div>
+                <div class="kalender-date is-empty"></div>
                 <div class="kalender-date is-empty"></div>
                 <div class="kalender-date is-empty"></div>
                 <div class="kalender-date is-empty"></div>
                 <button type="button" class="kalender-date">1</button>
+
+                <!-- Minggu 2 -->
                 <button type="button" class="kalender-date">2</button>
                 <button type="button" class="kalender-date">3</button>
                 <button type="button" class="kalender-date">4</button>
-
                 <button type="button" class="kalender-date">5</button>
                 <button type="button" class="kalender-date">6</button>
                 <button type="button" class="kalender-date">7</button>
                 <button type="button" class="kalender-date">8</button>
+
+                <!-- Minggu 3 -->
                 <button type="button" class="kalender-date">9</button>
                 <button type="button" class="kalender-date">10</button>
                 <button type="button" class="kalender-date">11</button>
-
                 <button type="button" class="kalender-date">12</button>
                 <button type="button" class="kalender-date">13</button>
                 <button type="button" class="kalender-date">14</button>
                 <button type="button" class="kalender-date">15</button>
+
+                <!-- Minggu 4 -->
                 <button type="button" class="kalender-date">16</button>
                 <button type="button" class="kalender-date">17</button>
                 <button type="button" class="kalender-date">18</button>
-
                 <button type="button" class="kalender-date">19</button>
                 <button type="button" class="kalender-date">20</button>
                 <button type="button" class="kalender-date">21</button>
                 <button type="button" class="kalender-date">22</button>
-                <button type="button" class="kalender-date">23</button>
-                <button type="button" class="kalender-date">24</button>
-                <button type="button" class="kalender-date">25</button>
 
-                <button type="button" class="kalender-date is-outline">
-                  26
-                </button>
-                <button type="button" class="kalender-date">27</button>
-                <button type="button" class="kalender-date is-selected">
-                  28
-                </button>
+                <!-- Minggu 5 (Tanggal aktif saat ini 23 Nov 2026) -->
+                <button type="button" class="kalender-date is-selected" data-tanggal="Senin, 23 Nov 2026">23</button>
+                <button type="button" class="kalender-date" data-tanggal="Selasa, 24 Nov 2026">24</button>
+                <button type="button" class="kalender-date" data-tanggal="Rabu, 25 Nov 2026">25</button>
+                <button type="button" class="kalender-date" data-tanggal="Kamis, 26 Nov 2026">26</button>
+                <button type="button" class="kalender-date" data-tanggal="Jumat, 27 Nov 2026">27</button>
+                <button type="button" class="kalender-date" data-tanggal="Sabtu, 28 Nov 2026">28</button>
                 <button type="button" class="kalender-date">29</button>
-                <button type="button" class="kalender-date">30</button>
-                <button type="button" class="kalender-date">31</button>
-                <div class="kalender-date is-empty"></div>
+                <button type="button" class="kalender-date" data-tanggal="Senin, 30 Nov 2026">30</button>
               </div>
 
               <div class="kalender-legend">
-                <span>Jam tersedia:</span>
-                <span class="legend-pill is-kosong">Kosong</span>
-                <span class="legend-pill is-terisi">Terisi</span>
-                <span class="legend-pill is-dipilih">Dipilih</span>
+                <span>Keterangan:</span>
+                <span class="legend-pill is-kosong">Tersedia</span>
+                <span class="legend-pill is-terisi">Penuh</span>
+                <span class="legend-pill is-dipilih">Tanggal Dipilih</span>
               </div>
             </section>
           </div>
 
-          <!-- Kolom Kanan: Form Reservasi -->
+          <!-- Kolom Kanan: Form Reservasi Cepat -->
           <aside class="detail-side-col">
-            <section class="detail-card reservasi-card">
-              <h2 class="reservasi-heading">Reservasi</h2>
+            <section class="detail-card reservasi-card sticky-top" style="top: 80px;">
+              <h2 class="reservasi-heading">Formulir Reservasi</h2>
+              <p class="text-muted small mb-3">Lengkapi detail pemesanan di bawah ini.</p>
 
-              <form
-                class="reservasi-form"
-                action="hasil-reservasi.html"
-                method="get"
-              >
+              <form class="reservasi-form" id="form-reservasi-detail" action="hasil-reservasi.html" method="get">
                 <div class="res-group">
-                  <label for="tempat" class="res-label">Tempat</label>
+                  <label for="tempat" class="res-label">Tempat Dipilih</label>
                   <input
                     type="text"
                     id="tempat"
                     name="tempat"
                     class="res-input"
                     value="Ruang Diskusi"
+                    readonly
                   />
                 </div>
 
                 <div class="res-group">
-                  <label for="tanggal" class="res-label">Tanggal</label>
+                  <label for="tanggal" class="res-label">Tanggal Reservasi</label>
                   <input
                     type="text"
                     id="tanggal"
                     name="tanggal"
                     class="res-input"
-                    value="Rabu, 28 Okt 2026"
+                    value="Senin, 23 Nov 2026"
+                    readonly
                   />
                 </div>
 
                 <div class="res-row-2">
                   <div class="res-group">
                     <label for="jam-mulai" class="res-label">Jam Mulai</label>
-                    <input
-                      type="text"
-                      id="jam-mulai"
-                      name="jam_mulai"
-                      class="res-input"
-                      value="08:00"
-                    />
+                    <select id="jam-mulai" name="jam_mulai" class="res-input form-select">
+                      <option value="08:00">08:00 WIB</option>
+                      <option value="10:00" selected>10:00 WIB</option>
+                      <option value="13:00">13:00 WIB</option>
+                      <option value="14:00">14:00 WIB</option>
+                    </select>
                   </div>
 
                   <div class="res-group">
-                    <label for="jam-selesai" class="res-label"
-                      >Jam Selesai</label
-                    >
-                    <input
-                      type="text"
-                      id="jam-selesai"
-                      name="jam_selesai"
-                      class="res-input"
-                      value="10:00"
-                    />
+                    <label for="jam-selesai" class="res-label">Jam Selesai</label>
+                    <select id="jam-selesai" name="jam_selesai" class="res-input form-select">
+                      <option value="10:00">10:00 WIB</option>
+                      <option value="12:00" selected>12:00 WIB</option>
+                      <option value="15:00">15:00 WIB</option>
+                      <option value="16:00">16:00 WIB</option>
+                    </select>
                   </div>
                 </div>
 
                 <div class="res-group">
-                  <label for="jumlah-orang" class="res-label"
-                    >Jumlah Orang</label
-                  >
+                  <label for="jumlah-orang" class="res-label">Jumlah Orang</label>
+                  <select id="jumlah-orang" name="jumlah_orang" class="res-input form-select">
+                    <option value="2 Orang">2 Orang</option>
+                    <option value="4 Orang" selected>4 Orang</option>
+                    <option value="6 Orang">6 Orang</option>
+                    <option value="8 Orang">8 Orang (Maksimal)</option>
+                  </select>
+                </div>
+
+                <div class="res-group">
+                  <label for="keperluan" class="res-label">Keperluan / Agenda</label>
                   <input
                     type="text"
-                    id="jumlah-orang"
-                    name="jumlah_orang"
+                    id="keperluan"
+                    name="keperluan"
                     class="res-input"
-                    value="4 Orang"
+                    placeholder="Contoh: Diskusi Tugas Akhir WDA"
+                    value="Pengerjaan Project Workshop Desain Aplikasi"
+                    required
                   />
                 </div>
 
-                <button type="submit" class="btn-reservasi">
-                  Kirim Reservasi
+                <button type="submit" class="btn-reservasi" id="btn-submit-reservasi">
+                  Kirim &amp; Konfirmasi Reservasi &rarr;
                 </button>
               </form>
             </section>
@@ -253,8 +271,12 @@
     </main>
 
     <footer class="detail-footer">
-      <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
-      <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
+      <p>&copy; 2026 Teras JTI - Politeknik Negeri Jember &middot; Kelompok 4 (NoBugNoCry)</p>
+      <p class="small">Seluruh data pada halaman ini adalah simulasi untuk keperluan evaluasi praktikum.</p>
     </footer>
+
+    <!-- Bootstrap 5 JS & Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

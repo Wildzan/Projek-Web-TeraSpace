@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ketersediaan - Teras JTI</title>
+    <title>Cek Ketersediaan Slot - Teras JTI</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/components/button.css" />
@@ -13,9 +19,10 @@
     <link rel="stylesheet" href="assets/css/components/table.css" />
   </head>
   <body>
+    <!-- Topbar Header -->
     <header class="topbar">
       <div class="topbar-kiri">
-        <a href="dashboard.html" class="brand">
+        <a href="index.html" class="brand" title="Kembali ke Profil Utama">
           <img
             src="assets/images/logo.png"
             alt="Logo Teras JTI"
@@ -24,145 +31,137 @@
           <span class="brand-title">Teras JTI</span>
         </a>
 
-        <nav class="nav-utama">
-          <a href="dashboard.html" class="nav-link">Beranda</a>
+        <nav class="nav-utama" aria-label="Navigasi Utama">
+          <a href="index.html" class="nav-link">Profil Utama</a>
+          <a href="dashboard.html" class="nav-link active">Reservasi</a>
           <a href="riwayat.html" class="nav-link">Riwayat</a>
-          <a href="profil.html" class="nav-link">Profil</a>
+          <a href="profil.html" class="nav-link">Akun</a>
         </nav>
       </div>
 
       <div class="topbar-kanan">
-        <a href="#" class="notif-btn" aria-label="Notifikasi">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-          </svg>
+        <a href="profil.html" class="user-info text-decoration-none">
+          <span class="user-avatar" id="topbar-avatar">FA</span>
+          <span class="user-name" id="topbar-username">Farrel Ananta</span>
         </a>
-
-        <div class="user-info">
-          <span class="user-avatar">NP</span>
-          <span class="user-name">Nama Pengguna</span>
-        </div>
       </div>
     </header>
 
     <main>
-      <p><a class="kembali" href="detail-tempat.html">Kembali</a></p>
+      <p><a class="kembali" href="detail-tempat.html">Kembali ke Detail Tempat</a></p>
 
       <section>
-        <h2>Ruang Diskusi</h2>
+        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+          <div>
+            <h2 class="m-0">Ketersediaan Slot &middot; Ruang Diskusi</h2>
+            <p class="text-muted small m-0">Pilih tanggal dan slot jam yang masih berstatus kosong.</p>
+          </div>
+          <span class="badge bg-success-subtle text-success border px-2 py-1">Ruangan Gratis</span>
+        </div>
 
-        <form>
-          <p>
-            <label for="tanggal">Pilih Tanggal</label><br />
-            <input type="date" id="tanggal" name="tanggal" value="2026-10-28" />
-          </p>
+        <form action="reservasi.html" method="get">
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <label for="tanggal" class="form-label fw-medium">Pilih Tanggal</label>
+              <input type="date" id="tanggal" name="tanggal" class="form-control" value="2026-11-23" />
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fw-medium">Kapasitas Maksimal</label>
+              <input type="text" class="form-control" value="Maks. 8 Orang" readonly disabled />
+            </div>
+          </div>
 
-          <h3>Pilih Jam</h3>
+          <h3 class="fs-6 fw-bold mb-2">Tabel Slot Jam Tersedia</h3>
+          <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+              <caption>
+                Daftar Slot Jam Ketersediaan &middot; Ruang Diskusi
+              </caption>
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Slot Jam</th>
+                  <th scope="col">Status Ketersediaan</th>
+                  <th scope="col">Pilihan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fw-medium">08:00 - 10:00 WIB</td>
+                  <td><span class="badge bg-success">Kosong (Tersedia)</span></td>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        type="radio"
+                        id="slot-0800"
+                        name="slot"
+                        value="08:00 - 10:00"
+                        class="form-check-input"
+                      />
+                      <label for="slot-0800" class="form-check-label small">Pilih Slot Ini</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="table-light text-muted">
+                  <td>10:00 - 12:00 WIB</td>
+                  <td><span class="badge bg-secondary">Terisi (Dipesan)</span></td>
+                  <td>
+                    <span class="small text-muted">Tidak Tersedia</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="fw-medium">13:00 - 15:00 WIB</td>
+                  <td><span class="badge bg-success">Kosong (Tersedia)</span></td>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        type="radio"
+                        id="slot-1300"
+                        name="slot"
+                        value="13:00 - 15:00"
+                        class="form-check-input"
+                        checked
+                      />
+                      <label for="slot-1300" class="form-check-label small fw-bold text-primary">Slot Terpilih</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="fw-medium">15:00 - 16:00 WIB</td>
+                  <td><span class="badge bg-success">Kosong (Tersedia)</span></td>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        type="radio"
+                        id="slot-1500"
+                        name="slot"
+                        value="15:00 - 16:00"
+                        class="form-check-input"
+                      />
+                      <label for="slot-1500" class="form-check-label small">Pilih Slot Ini</label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <table>
-            <caption>
-              Slot Jam Rabu, 28 Okt 2026
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Jam</th>
-                <th scope="col">Status</th>
-                <th scope="col">Pilih</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>08:00</td>
-                <td>Kosong</td>
-                <td>
-                  <input
-                    type="radio"
-                    id="slot-0800"
-                    name="slot"
-                    value="08:00"
-                  />
-                  <label for="slot-0800">Pilih 08:00</label>
-                </td>
-              </tr>
-              <tr>
-                <td>10:00</td>
-                <td>Terisi</td>
-                <td>
-                  <input
-                    type="radio"
-                    id="slot-1000"
-                    name="slot"
-                    value="10:00"
-                    disabled
-                  />
-                  <label for="slot-1000">Tidak tersedia</label>
-                </td>
-              </tr>
-              <tr>
-                <td>13:00</td>
-                <td>Kosong</td>
-                <td>
-                  <input
-                    type="radio"
-                    id="slot-1300"
-                    name="slot"
-                    value="13:00"
-                  />
-                  <label for="slot-1300">Pilih 13:00</label>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-4 pt-3 border-top">
+            <span class="text-muted small">&#9432; Slot yang dipilih akan ditahan selama proses reservasi.</span>
+            <button type="submit" class="btn btn-primary px-4 py-2 fw-semibold">
+              Lanjut ke Formulir Reservasi &rarr;
+            </button>
+          </div>
         </form>
-
-        <h3>Keterangan Status</h3>
-        <ul>
-          <li>Kosong: slot masih bisa dipesan</li>
-          <li>Terisi: slot sudah dipesan orang lain</li>
-          <li>Dipilih: slot yang sedang kamu pilih</li>
-        </ul>
-
-        <p><a class="tombol" href="reservasi.html">Pesan Slot Terpilih</a></p>
-      </section>
-
-      <section>
-        <h2>Contoh Tampilan: Belum Ada Slot Dipilih</h2>
-        <p>
-          Tombol pesan tidak aktif sampai pengguna memilih satu slot kosong.
-        </p>
-        <p><button type="button" disabled>Pesan Slot Terpilih</button></p>
-      </section>
-
-      <section>
-        <h2>Contoh Tampilan: Slot Dipilih</h2>
-        <dl>
-          <dt>Tempat</dt>
-          <dd>Ruang Diskusi</dd>
-          <dt>Tanggal</dt>
-          <dd>Rabu, 28 Okt 2026</dd>
-          <dt>Jam</dt>
-          <dd>13:00</dd>
-          <dt>Status</dt>
-          <dd>Dipilih</dd>
-        </dl>
-        <p><a class="tombol" href="reservasi.html">Pesan Slot Terpilih</a></p>
       </section>
     </main>
 
     <footer>
-      <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
-      <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
+      <p>&copy; 2026 Teras JTI - Politeknik Negeri Jember &middot; Kelompok 4 (NoBugNoCry)</p>
+      <p class="small text-muted">Seluruh data pada halaman ini adalah simulasi untuk keperluan evaluasi praktikum.</p>
     </footer>
+
+    <!-- Bootstrap 5 JS & Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hasil Reservasi - Teras JTI</title>
+    <title>Status Hasil Reservasi - Teras JTI</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/components/button.css" />
@@ -13,9 +19,10 @@
     <link rel="stylesheet" href="assets/css/components/table.css" />
   </head>
   <body>
+    <!-- Topbar Header -->
     <header class="topbar">
       <div class="topbar-kiri">
-        <a href="dashboard.html" class="brand">
+        <a href="index.html" class="brand" title="Kembali ke Profil Utama">
           <img
             src="assets/images/logo.png"
             alt="Logo Teras JTI"
@@ -24,130 +31,111 @@
           <span class="brand-title">Teras JTI</span>
         </a>
 
-        <nav class="nav-utama">
-          <a href="dashboard.html" class="nav-link">Beranda</a>
+        <nav class="nav-utama" aria-label="Navigasi Utama">
+          <a href="index.html" class="nav-link">Profil Utama</a>
+          <a href="dashboard.html" class="nav-link active">Reservasi</a>
           <a href="riwayat.html" class="nav-link">Riwayat</a>
-          <a href="profil.html" class="nav-link">Profil</a>
+          <a href="profil.html" class="nav-link">Akun</a>
         </nav>
       </div>
 
       <div class="topbar-kanan">
-        <a href="#" class="notif-btn" aria-label="Notifikasi">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-          </svg>
+        <a href="profil.html" class="user-info text-decoration-none">
+          <span class="user-avatar" id="topbar-avatar">FA</span>
+          <span class="user-name" id="topbar-username">Farrel Ananta</span>
         </a>
-
-        <div class="user-info">
-          <span class="user-avatar">NP</span>
-          <span class="user-name">Nama Pengguna</span>
-        </div>
       </div>
     </header>
 
     <main>
-      <section>
-        <h2>Contoh Tampilan: Reservasi Terkonfirmasi (Tempat Gratis)</h2>
-        <div class="banner banner-sukses">
-          <p><strong>Reservasi Terkonfirmasi</strong></p>
-          <p>Tempat berhasil dipesan. Reservasimu sudah terkonfirmasi.</p>
+      <!-- Breadcrumb Navigasi -->
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Profil Utama</a></li>
+          <li class="breadcrumb-item"><a href="dashboard.html" class="text-decoration-none">Reservasi</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Tiket Bukti Reservasi</li>
+        </ol>
+      </nav>
+
+      <!-- Section: Tiket Terkonfirmasi Utama -->
+      <section class="border-success shadow-sm">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: #dcfce7; color: #15803d; display: grid; place-items: center; font-size: 1.5rem;">
+            &#10003;
+          </div>
+          <div>
+            <h2 class="m-0 fs-4 text-success">Reservasi Berhasil Terkonfirmasi!</h2>
+            <p class="text-muted small m-0">Slot ruangan Anda telah berhasil dijadwalkan di sistem Teras JTI.</p>
+          </div>
         </div>
 
-        <dl>
-          <dt>Tempat</dt>
-          <dd>Ruang Diskusi</dd>
-          <dt>Tanggal dan Jam</dt>
-          <dd>Rabu, 28 Okt 2026, 13:00 - 15:00</dd>
-          <dt>Jumlah Orang</dt>
-          <dd>4 orang</dd>
-          <dt>Biaya</dt>
-          <dd>GRATIS</dd>
-          <dt>Status</dt>
-          <dd>Terkonfirmasi</dd>
-        </dl>
+        <div class="banner banner-sukses mb-4">
+          <p><strong>Status: Terjadwal &amp; Siap Digunakan</strong></p>
+          <p class="small mb-0">Tunjukkan bukti digital ini kepada staf resepsionis Teras JTI saat waktu penggunaan dimulai.</p>
+        </div>
 
-        <ul>
-          <li><a href="riwayat.html">Lihat Riwayat</a></li>
-          <li><a href="dashboard.html">Kembali ke Beranda</a></li>
-        </ul>
+        <div class="card p-3 bg-light border mb-4">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <span class="text-muted small d-block">Ruangan:</span>
+              <strong class="fs-6" id="res-tempat">Ruang Diskusi (Lantai 1)</strong>
+            </div>
+            <div class="col-sm-6">
+              <span class="text-muted small d-block">Kode Booking:</span>
+              <strong class="text-primary font-monospace fs-6" id="res-kode">TRX-20261123-01</strong>
+            </div>
+            <div class="col-sm-6">
+              <span class="text-muted small d-block">Jadwal Penggunaan:</span>
+              <strong class="fs-6" id="res-jadwal">Senin, 23 Nov 2026 &middot; 10:00 - 12:00 WIB</strong>
+            </div>
+            <div class="col-sm-6">
+              <span class="text-muted small d-block">Jumlah Peserta:</span>
+              <strong class="fs-6" id="res-orang">4 Orang</strong>
+            </div>
+            <div class="col-sm-6">
+              <span class="text-muted small d-block">Pemesan:</span>
+              <strong class="fs-6" id="res-pemesan">Farrel Ananta Firmansyah (E41240001)</strong>
+            </div>
+            <div class="col-sm-6">
+              <span class="text-muted small d-block">Biaya Pemakaian:</span>
+              <span class="badge bg-success-subtle text-success border px-2 py-1 fs-6">GRATIS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+          <a href="riwayat.html" class="btn btn-primary px-3">
+            Lihat di Daftar Riwayat &rarr;
+          </a>
+          <button type="button" class="btn btn-outline-secondary px-3" onclick="window.print()">
+            &#128424; Cetak / Simpan Tiket
+          </button>
+          <a href="dashboard.html" class="btn btn-light px-3">
+            Kembali ke Katalog
+          </a>
+          <a href="index.html" class="btn btn-link text-muted text-decoration-none">
+            Kembali ke Halaman Profil
+          </a>
+        </div>
       </section>
 
-      <section>
-        <h2>Contoh Tampilan: Menunggu Pembayaran (Tempat Berbayar)</h2>
-        <div class="banner banner-menunggu">
-          <p><strong>Reservasi Tercatat</strong></p>
-          <p>
-            Selesaikan pembayaran DP agar reservasimu terkonfirmasi. Jadwal
-            ditahan sementara.
-          </p>
+      <!-- Contoh Kasus Status Lain (Untuk Keperluan Evaluasi Praktikum) -->
+      <section class="opacity-75">
+        <h3 class="fs-6 text-muted mb-2">Simulasi Keadaan: Menunggu Pembayaran DP (Tempat Berbayar)</h3>
+        <div class="banner banner-menunggu mb-0">
+          <p><strong>Menunggu Konfirmasi Pembayaran DP</strong></p>
+          <p class="small mb-0">Jika memilih tempat berbayar seperti Aula Mini, halaman hasil akan memberikan petunjuk verifikasi bukti transfer.</p>
         </div>
-
-        <dl>
-          <dt>Tempat</dt>
-          <dd>Aula Mini</dd>
-          <dt>Tanggal dan Jam</dt>
-          <dd>Rabu, 28 Okt 2026, 13:00 - 15:00</dd>
-          <dt>Jumlah Orang</dt>
-          <dd>4 orang</dd>
-          <dt>DP</dt>
-          <dd>Rp 50.000</dd>
-          <dt>Status</dt>
-          <dd>Menunggu Pembayaran</dd>
-          <dt>Status DP</dt>
-          <dd>Belum Bayar</dd>
-        </dl>
-
-        <ul>
-          <li>
-            <a class="tombol" href="pembayaran.html">Bayar DP Sekarang</a>
-          </li>
-          <li><a href="riwayat.html">Lihat Riwayat</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Contoh Tampilan: DP Lunas (Reservasi Berhasil)</h2>
-        <div class="banner banner-sukses">
-          <p><strong>Reservasi Berhasil</strong></p>
-          <p>Pembayaran DP diterima. Reservasimu sudah terkonfirmasi.</p>
-        </div>
-
-        <dl>
-          <dt>Tempat</dt>
-          <dd>Aula Mini</dd>
-          <dt>Tanggal dan Jam</dt>
-          <dd>Rabu, 28 Okt 2026, 13:00 - 15:00</dd>
-          <dt>Jumlah Orang</dt>
-          <dd>4 orang</dd>
-          <dt>DP</dt>
-          <dd>Rp 50.000</dd>
-          <dt>Status</dt>
-          <dd>Terkonfirmasi</dd>
-          <dt>Status DP</dt>
-          <dd>Lunas</dd>
-        </dl>
-
-        <ul>
-          <li><a href="riwayat.html">Lihat Riwayat</a></li>
-          <li><a href="dashboard.html">Kembali ke Beranda</a></li>
-        </ul>
       </section>
     </main>
 
     <footer>
-      <p>Teras JTI - Kelompok 4 (NoBugNoCry), Politeknik Negeri Jember, 2026</p>
-      <p>Seluruh data pada halaman ini adalah contoh untuk keperluan tugas.</p>
+      <p>&copy; 2026 Teras JTI - Politeknik Negeri Jember &middot; Kelompok 4 (NoBugNoCry)</p>
+      <p class="small text-muted">Seluruh data pada halaman ini adalah simulasi untuk keperluan evaluasi praktikum.</p>
     </footer>
+
+    <!-- Bootstrap 5 JS & Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

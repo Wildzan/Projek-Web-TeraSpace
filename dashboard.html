@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beranda - Teras JTI</title>
+    <title>Katalog Reservasi - Teras JTI</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/components/button.css" />
@@ -13,9 +19,10 @@
     <link rel="stylesheet" href="assets/css/components/table.css" />
   </head>
   <body>
+    <!-- Topbar Header Area Reservasi -->
     <header class="topbar">
       <div class="topbar-kiri">
-        <a href="dashboard.html" class="brand">
+        <a href="index.html" class="brand" title="Kembali ke Profil Utama">
           <img
             src="assets/images/logo.png"
             alt="Logo Teras JTI"
@@ -24,15 +31,16 @@
           <span class="brand-title">Teras JTI</span>
         </a>
 
-        <nav class="nav-utama">
-          <a href="dashboard.html" class="nav-link active">Beranda</a>
+        <nav class="nav-utama" aria-label="Navigasi Utama">
+          <a href="index.html" class="nav-link">Profil Utama</a>
+          <a href="dashboard.html" class="nav-link active">Reservasi</a>
           <a href="riwayat.html" class="nav-link">Riwayat</a>
-          <a href="profil.html" class="nav-link">Profil</a>
+          <a href="profil.html" class="nav-link">Akun</a>
         </nav>
       </div>
 
       <div class="topbar-kanan">
-        <a href="#" class="notif-btn" aria-label="Notifikasi">
+        <a href="#" class="notif-btn" aria-label="Notifikasi" title="Notifikasi Reservasi">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -49,38 +57,54 @@
           </svg>
         </a>
 
-        <div class="user-info">
-          <span class="user-avatar">NP</span>
-          <span class="user-name">Nama Pengguna</span>
-        </div>
+        <a href="profil.html" class="user-info text-decoration-none">
+          <span class="user-avatar" id="topbar-avatar">FA</span>
+          <span class="user-name" id="topbar-username">Farrel Ananta</span>
+        </a>
       </div>
     </header>
 
     <main>
+      <!-- Breadcrumb Navigasi -->
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Profil Utama</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Katalog Reservasi</li>
+        </ol>
+      </nav>
+
+      <!-- Search Section -->
       <section>
-        <h2>Cari Tempat</h2>
-        <form>
-          <label for="cari">Cari tempat atau ruangan</label><br />
+        <h2>Cari Tempat &amp; Ruangan</h2>
+        <form id="form-cari-tempat" onsubmit="event.preventDefault();">
+          <label for="cari">Ketik nama ruangan atau fasilitas yang dicari</label><br />
           <input
             type="search"
             id="cari"
-            placeholder="Cari tempat atau ruangan"
+            placeholder="Misal: Ruang Diskusi, Aula Mini..."
           />
-          <button type="submit">Cari</button>
+          <button type="submit">Cari Ruangan</button>
         </form>
       </section>
+
+      <!-- Filter Section -->
       <section>
-        <h2>Filter</h2>
-        <ul class="chip-list">
-          <li><a href="dashboard.html">Semua</a></li>
-          <li><a href="dashboard.html">Gratis</a></li>
-          <li><a href="dashboard.html">Berbayar (DP)</a></li>
+        <h2>Filter Kategori</h2>
+        <ul class="chip-list" id="filter-kategori">
+          <li><a href="#" class="chip-item active" data-filter="semua">Semua Tempat</a></li>
+          <li><a href="#" class="chip-item" data-filter="gratis">Gratis</a></li>
+          <li><a href="#" class="chip-item" data-filter="berbayar">Berbayar (DP)</a></li>
         </ul>
       </section>
-      <section>
-        <h2>Tempat Tersedia</h2>
 
-        <article>
+      <!-- Tempat Tersedia Section -->
+      <section>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="m-0">Daftar Tempat Tersedia</h2>
+          <span class="text-muted small">Update Status Realtime (Dummy)</span>
+        </div>
+
+        <article data-kategori="gratis">
           <figure>
             <img
               src="assets/images/tempat.jpeg"
@@ -88,15 +112,15 @@
               width="320"
               height="180"
             />
-            <figcaption>Foto Ruang Diskusi</figcaption>
+            <figcaption>Ruang Diskusi &middot; Gedung JTI Lantai 1</figcaption>
           </figure>
           <h3>Ruang Diskusi</h3>
           <p><strong class="label label-gratis">GRATIS</strong></p>
-          <p>Kapasitas 6 orang</p>
-          <p><a class="tombol" href="detail-tempat.html">Lihat Jadwal</a></p>
+          <p>Kapasitas: 6 - 8 orang &middot; Dilengkapi Proyektor &amp; AC</p>
+          <p><a class="tombol" href="detail-tempat.html">Lihat Jadwal &amp; Reservasi</a></p>
         </article>
 
-        <article>
+        <article data-kategori="berbayar">
           <figure>
             <img
               src="assets/images/aulamini.webp"
@@ -104,18 +128,23 @@
               width="320"
               height="186"
             />
-            <figcaption>Foto Aula Mini</figcaption>
+            <figcaption>Aula Mini &middot; Gedung JTI Lantai 1</figcaption>
           </figure>
           <h3>Aula Mini</h3>
           <p><strong class="label label-dp">DP Rp 50.000</strong></p>
-          <p>Kapasitas 8 orang</p>
-          <p><a class="tombol" href="detail-tempat.html">Lihat Jadwal</a></p>
+          <p>Kapasitas: 15 - 20 orang &middot; Sound System &amp; Layar LCD</p>
+          <p><a class="tombol" href="detail-tempat.html">Lihat Jadwal &amp; Reservasi</a></p>
         </article>
       </section>
     </main>
 
     <footer>
-      <p>2026 Teras JTI - Politeknik Negeri Jember</p>
+      <p>&copy; 2026 Teras JTI - Politeknik Negeri Jember &middot; Kelompok 4 (NoBugNoCry)</p>
+      <p class="small text-muted">Seluruh data pada halaman ini adalah simulasi untuk keperluan evaluasi praktikum.</p>
     </footer>
+
+    <!-- Bootstrap 5 JS & Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
